@@ -9,21 +9,24 @@ class User(db.Model):
     username = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(255), nullable=False)
     password = db.Column(db.String(100), nullable=False)
+    zipcode = db.Column(db.String(15))
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
 
-    def __init__(self, username, email, password):
+    def __init__(self, username, email, password, zipcode):
         self.username = username
         self.email = email
         self.password = password
+        self.zipcode = zipcode
 
     def json(self):
         return {"id": self.id,
                 "username": self.username,
                 "email": self.email,
                 "password": self.password,
+                "zipcode": self.zipcode,
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}
 

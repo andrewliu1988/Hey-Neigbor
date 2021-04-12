@@ -10,7 +10,7 @@ class Business(db.Model):
     address = db.Column(db.String(255), nullable=False)
     description = db.Column(db.string(255), nullable=False)
     date = db.Column(db.String(50), nullable=False)
-    zipcode = db.Column(db.Integer(20), nullable=False)
+    zipcode = db.Column(db.String(15), nullable=False)
     website = db.Column(db.String(255), nullable=False)
     longitude = db.Column(db.String(50), nullable=False)
     langitude = db.Column(db.String(50), nullable=False)

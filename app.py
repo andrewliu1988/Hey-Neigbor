@@ -3,6 +3,9 @@ from flask_restful import Api
 from flask_migrate import Migrate
 from models.db import db
 from flask_cors import CORS
+from models.business import Business
+from models.event import Event
+from models.user import User
 
 app = Flask(__name__)
 api = Api(app)
