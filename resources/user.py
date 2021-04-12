@@ -16,8 +16,8 @@ class Users(Resource):
 
 
 class SingleUser(Resource):
-    def get(self, id):
-        user = User.find_by_id(id)
+    def get(self, email):
+        user = User.find_by_email(email)
         return user.json()
 
     def delete(self, id):

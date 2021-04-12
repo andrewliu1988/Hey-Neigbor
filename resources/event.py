@@ -28,7 +28,7 @@ class SingleEvent(Resource):
         event = Event.find_by_id(id)
         data = request.get_json()
         for key in data:
-            setattr(event, key data[key])
+            setattr(event, key, data[key])
         return event.json()
 
 

@@ -6,7 +6,7 @@ from flask_cors import CORS
 from models.business import Business
 from models.event import Event
 from models.user import User
-from resources.post import Businesses, SingleBusiness, ZipcodeBusiness
+from resources.business import Businesses, SingleBusiness, ZipcodeBusiness
 from resources.event import Events, SingleEvent, ZipCodeEvent
 from resources.user import Users, UserBusinessEvent, SingleUser
 from sqlalchemy.orm import joinedload

@@ -8,8 +8,8 @@ class User(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(20), nullable=False)
-    email = db.Column(db.String(255), nullable=False)
-    password = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(255), nullable=False, unique=True)
+    password_digest = db.Column(db.String(100), nullable=False)
     zipcode = db.Column(db.String(15))
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
@@ -19,14 +19,14 @@ class User(db.Model):
     def __init__(self, username, email, password, zipcode):
         self.username = username
         self.email = email
-        self.password = password
+        self.password_digest = password_digest
         self.zipcode = zipcode
 
     def json(self):
         return {"id": self.id,
                 "username": self.username,
                 "email": self.email,
-                "password": self.password,
+                "password_digest": self.password_digest,
                 "zipcode": self.zipcode,
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}
@@ -42,8 +42,12 @@ class User(db.Model):
         return [user.json() for users in Users]
 
     @classmethod
+    def find_by_email(cls, email):
+        return User.query.filter_by(email=email).first()
+
+     @classmethod
     def find_by_id(cls, id):
-        return User.query.filter_by(id=id).first()
+        return User.query.filter_by(id=id).first()    
 
     @classmethod
     def delete(cls, id):

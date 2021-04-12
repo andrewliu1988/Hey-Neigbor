@@ -1,4 +1,4 @@
-from datatime import datetime
+from datetime import datetime
 from models.db import db
 
 
@@ -8,7 +8,7 @@ class Business(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
     address = db.Column(db.String(255), nullable=False)
-    description = db.Column(db.string(255), nullable=False)
+    description = db.Column(db.String(255), nullable=False)
     date = db.Column(db.String(50), nullable=False)
     zipcode = db.Column(db.String(15), nullable=False)
     website = db.Column(db.String(255), nullable=False)

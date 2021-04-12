@@ -14,7 +14,7 @@ class Event(db.Model):
     website = db.Column(db.String(255), nullable=False)
     longitude = db.Column(db.String(50), nullable=False)
     langitude = db.Column(db.String(50), nullable=False)
-    attendees = db.Column(db.Ineger(10), nullable=False)
+    attendees = db.Column(db.Integer, nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
@@ -44,27 +44,26 @@ class Event(db.Model):
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}
 
-      def create(self):
+    def create(self):
         db.session.add(self)
         db.session.commit()
-        return self          
+        return self
 
-      @classmethod
-      def find_all(cls):
+    @classmethod
+    def find_all(cls):
         events = Event.query.all()
         return [event.json() for event in events]
 
-      @classmethod
-      def find_by_id(cls, id):
+    @classmethod
+    def find_by_id(cls, id):
         return Event.query.filter_by(id=id).first()
 
-      @classmethod
-      def find_by_zipcode(cls, zipcode):
+    @classmethod
+    def find_by_zipcode(cls, zipcode):
         return Event.query.filter_by(zipcode=zipcode)
 
-
-      @classmethod
-      def delete(cls, id): 
+    @classmethod
+    def delete(cls, id):
         event = Event.find_by_id(id)
         db.session.delete(event)
         db.session.commit()
