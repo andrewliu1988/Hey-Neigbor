@@ -7,6 +7,7 @@ from models.business import Business
 from models.event import Event
 from models.user import User
 from resources.post import Businesses, SingleBusiness
+from resources.event import Events, SingleEvent
 
 app = Flask(__name__)
 api = Api(app)
@@ -22,6 +23,9 @@ migrate = Migrate(app, db)
 
 api.add_resource(Businesses, '/businesses')
 api.add_resource(SingleBusiness, '/businesses/<int:id>')
+
+api.add_resource(Events, '/events')
+api.add_resource(SingleEvent, '/events/<int:id>')
 
 
 if __name__ == '__main__':

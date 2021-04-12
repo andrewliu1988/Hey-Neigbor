@@ -9,7 +9,7 @@ class Businesses(Resource):
         business = Business.find_all()
         return business
 
-    def post(sefl):
+    def post(self):
         business = Business(**request.get_json())
         business.create()
         return business.json(), 201

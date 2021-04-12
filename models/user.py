@@ -1,5 +1,6 @@
 from datetime import datetime
 from models.db import db
+from sqlalchemy.orm import joinedload
 
 
 class User(db.Model):
