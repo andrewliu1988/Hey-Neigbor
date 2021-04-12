@@ -56,7 +56,7 @@ class Event(db.Model):
 
       @classmethod
       def find_by_id(cls, id):
-        return Event.query.filter_by(id=id), first()
+        return Event.query.filter_by(id=id).first()
 
 
       @classmethod

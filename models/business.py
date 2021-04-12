@@ -53,11 +53,11 @@ class Business(db.Model):
 
     @classmethod
     def find_by_id(cls, id):
-        return Business.query.filter_by(id=id), first()
+        return Business.query.filter_by(id=id).first()
 
     @classmethod
     def delete(cls, id):
         business = Business.find_by_id(id)
-        db.session.delete(post)
+        db.session.delete(business)
         db.session.commit()
         return business.json()
