@@ -30,3 +30,9 @@ class SingleBusiness(Resource):
         for key in data:
             setattr(business, key, data[key])
         return business.json()
+
+
+class ZipcodeBusiness(Resource):
+    def get(self, zipcode):
+        business = Business.find_by_zipcode(zipcode)
+        return business

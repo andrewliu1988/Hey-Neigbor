@@ -6,8 +6,10 @@ from flask_cors import CORS
 from models.business import Business
 from models.event import Event
 from models.user import User
-from resources.post import Businesses, SingleBusiness
-from resources.event import Events, SingleEvent
+from resources.post import Businesses, SingleBusiness, ZipcodeBusiness
+from resources.event import Events, SingleEvent, ZipCodeEvent
+from resources.user import Users, UserBusinessEvent, SingleUser
+from sqlalchemy.orm import joinedload
 
 app = Flask(__name__)
 api = Api(app)
@@ -23,9 +25,16 @@ migrate = Migrate(app, db)
 
 api.add_resource(Businesses, '/businesses')
 api.add_resource(SingleBusiness, '/businesses/<int:id>')
+api.add_resource(ZipcodeBusiness, '/businesses/<string:zipcode>')
 
 api.add_resource(Events, '/events')
 api.add_resource(SingleEvent, '/events/<int:id>')
+api.add_resource(ZipCodeEvent, '/string/<string:id>')
+
+
+api.add_resource(Users, '/users')
+api.add_resource(SingleUser, '/users/<int:id>')
+api.add_resource(UserBusinessEvent, '/users/businessevent/<int:id>')
 
 
 if __name__ == '__main__':

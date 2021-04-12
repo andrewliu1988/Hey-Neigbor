@@ -30,3 +30,9 @@ class SingleEvent(Resource):
         for key in data:
             setattr(event, key data[key])
         return event.json()
+
+
+class ZipCodeEvent(Resource):
+    def get(self, zipcode):
+        event = Event.find_by_zipcode(zipcode)
+        return event

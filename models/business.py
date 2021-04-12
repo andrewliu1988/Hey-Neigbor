@@ -56,6 +56,10 @@ class Business(db.Model):
         return Business.query.filter_by(id=id).first()
 
     @classmethod
+    def find_by_zipcode(cls, zipcode):
+        return Business.query.filter_by(zipcode=zipcode)
+
+    @classmethod
     def delete(cls, id):
         business = Business.find_by_id(id)
         db.session.delete(business)

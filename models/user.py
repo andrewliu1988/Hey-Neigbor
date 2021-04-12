@@ -51,3 +51,11 @@ class User(db.Model):
         db.session.delete(user)
         db.session.commit()
         return user.json()
+
+    @classmethod
+    def include_event_business(self, user_id):
+        user = User.query.options(joinedload('businesses'), joinedload(
+            'events').filter_by(id=user_id).first())
+        businesses = [b.json() for b in user.business]
+        events = [e.json() for e in user.event]
+        return {**user.json(), 'businesses': businesses, 'events': events}

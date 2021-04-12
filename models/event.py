@@ -58,6 +58,10 @@ class Event(db.Model):
       def find_by_id(cls, id):
         return Event.query.filter_by(id=id).first()
 
+      @classmethod
+      def find_by_zipcode(cls, zipcode):
+        return Event.query.filter_by(zipcode=zipcode)
+
 
       @classmethod
       def delete(cls, id): 
