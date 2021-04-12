@@ -6,6 +6,7 @@ from flask_cors import CORS
 from models.business import Business
 from models.event import Event
 from models.user import User
+from resources.post import Businesses, SingleBusiness
 
 app = Flask(__name__)
 api = Api(app)
@@ -17,6 +18,10 @@ app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)
 migrate = Migrate(app, db)
+
+
+api.add_resource(Businesses, '/businesses')
+api.add_resource(SingleBusiness, '/businesses/<int:id>')
 
 
 if __name__ == '__main__':
