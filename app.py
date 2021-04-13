@@ -10,6 +10,7 @@ from resources.business import Businesses, SingleBusiness, ZipcodeBusiness
 from resources.event import Events, SingleEvent, ZipCodeEvent
 from resources.user import Users, UserBusinessEvent, SingleUser
 from sqlalchemy.orm import joinedload
+from resources.auth import Login, Register
 
 app = Flask(__name__)
 api = Api(app)
@@ -35,6 +36,9 @@ api.add_resource(ZipCodeEvent, '/string/<string:id>')
 api.add_resource(Users, '/users')
 api.add_resource(SingleUser, '/users/<int:id>')
 api.add_resource(UserBusinessEvent, '/users/businessevent/<int:id>')
+
+api.add_resource(Login, '/auth/login')
+api.add_reource(Register, '/auth/register')
 
 
 if __name__ == '__main__':

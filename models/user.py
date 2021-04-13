@@ -15,6 +15,10 @@ class User(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
+    businesses = db.relationship(
+        "Business", cascade='all', backref=db.backref('businesses', lazy=True))
+    events = db.relationship("Events", cascade='all',
+                             backref=db.backref("events", lazy=True))
 
     def __init__(self, username, email, password, zipcode):
         self.username = username
@@ -58,8 +62,8 @@ class User(db.Model):
 
     @classmethod
     def include_event_business(self, user_id):
-        user = User.query.options(joinedload('businesses'), joinedload(
-            'events').filter_by(id=user_id).first())
+        user = User.query.options(joinedload('user_business'), joinedload(
+            'user_event').filter_by(id=user_id).first())
         businesses = [b.json() for b in user.business]
         events = [e.json() for e in user.event]
         return {**user.json(), 'businesses': businesses, 'events': events}

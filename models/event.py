@@ -19,6 +19,7 @@ class Event(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
                            nullable=False, onupdate=datetime.now())
+    user = db.relationship("User", backref=db.backref("user_event" lazy=True))
 
     def __init__(self, name, address, description, date, zipcode, website, longitude, langitude, attendees):
         self.name = name
