@@ -1,3 +1,5 @@
+import { GET_ALL_BUSINESS, GET_BUSINESS_DETIALS } from '../types'
+
 const iState = {
   allBusiness: [],
   businessDetails: {}
