@@ -38,11 +38,11 @@ export const GetBusinessDetails = (id) => async (dispatch) => {
 
 export const GetBusinessByZipcode = (zipcode) => async (dispatch) => {
   try {
-    const zipC = await __GetBusinessByZipcode(zipcode)
-    console.log(zipC)
+    const bZipcode = await __GetBusinessByZipcode(zipcode)
+    console.log(bZipcode)
     dispatch({
-      type: GetBusinessByZipcode,
-      payload: zipC
+      type: GET_BUSINESSES_BY_ZIPCODE,
+      payload: bZipcode
     })
   } catch (error) {
     throw error
