@@ -13,7 +13,6 @@ import {
 export const GetAllEvent = () => async (dispatch) => {
   try {
     const events = await __GetAllEvent()
-    console.log(events)
     dispatch({
       type: GET_ALL_EVENT,
       payload: events

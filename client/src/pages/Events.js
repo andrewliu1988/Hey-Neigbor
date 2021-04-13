@@ -16,9 +16,9 @@ const mapDispatchToProps = (dispatch) => {
 const Events = (props) => {
   useEffect(() => {
     props.fetchAllEvent()
+    //eslint-disable-next-line
   }, [])
 
-  console.log(props.eventState.allEvent)
   let events = props.eventState.allEvent
 
   return (

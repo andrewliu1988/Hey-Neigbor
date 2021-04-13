@@ -12,7 +12,6 @@ export const __GetALlBusiness = async () => {
 export const __GetBusinessDetails = async (id) => {
   try {
     const res = await Client.get(`/businesses/${id}`)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

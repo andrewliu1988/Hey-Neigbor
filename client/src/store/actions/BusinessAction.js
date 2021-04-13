@@ -25,7 +25,6 @@ export const GetAllBusiness = () => async (dispatch) => {
 export const GetBusinessDetails = (id) => async (dispatch) => {
   try {
     const business = await __GetBusinessDetails(id)
-    console.log(business)
     dispatch({
       type: GET_BUSINESS_DETIALS,
       payload: business

@@ -16,6 +16,7 @@ const mapDispatchToProps = (dispatch) => {
 const Homepage = (props) => {
   useEffect(() => {
     props.fetchAllBusiness()
+    //eslint-disable-next-line
   }, [])
 
   let businesses = props.businessState.allBusiness
@@ -26,7 +27,14 @@ const Homepage = (props) => {
       <div className="business-container">
         {businesses.length ? (
           businesses.map((business, i) => (
-            <BusinessCard key={i} business={business} />
+            <div
+              onClick={() =>
+                props.history.push(`/business_details/${business.id}`)
+              }
+              key={i}
+            >
+              <BusinessCard business={business} />
+            </div>
           ))
         ) : (
           <h3>Loading</h3>

@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage'
 import Events from './pages/Events'
 import Nav from './components/Nav'
+import BusinessDetails from './components/BusinessDetails'
 
 function App() {
   return (
@@ -13,6 +14,11 @@ function App() {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/events" component={Events} />
+          <Route
+            exact
+            path="/business_details/:id"
+            component={BusinessDetails}
+          />
         </Switch>
       </main>
     </div>
