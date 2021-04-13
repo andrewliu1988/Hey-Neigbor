@@ -2,7 +2,7 @@ import Client from './'
 
 export const __GetAllEvent = async () => {
   try {
-    const res = Client.get('/events')
+    const res = await Client.get('/events')
     console.log(res)
     return res.data
   } catch (error) {
@@ -12,7 +12,7 @@ export const __GetAllEvent = async () => {
 
 export const __GetEventDetails = async (id) => {
   try {
-    const res = Client.get(`/events/${id}`)
+    const res = await Client.get(`/events/${id}`)
     console.log(res)
     return res.data
   } catch (error) {
@@ -22,7 +22,7 @@ export const __GetEventDetails = async (id) => {
 
 export const __GetEventsByZipcode = async (zipcode) => {
   try {
-    const res = Client.get(`/events/${zipcode}`)
+    const res = await Client.get(`/events/${zipcode}`)
     console.log(res)
     return res.data
   } catch (error) {

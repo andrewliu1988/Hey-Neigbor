@@ -15,7 +15,7 @@ export const GetAllEvent = () => async (dispatch) => {
     const events = await __GetAllEvent()
     console.log(events)
     dispatch({
-      action: GET_ALL_EVENT,
+      type: GET_ALL_EVENT,
       payload: events
     })
   } catch (error) {
@@ -23,12 +23,12 @@ export const GetAllEvent = () => async (dispatch) => {
   }
 }
 
-export const GetEventsByZipcode = (id) => async (dispatch) => {
+export const GetEventDetails = (id) => async (dispatch) => {
   try {
     const event = await __GetEventDetails(id)
     console.log(event)
     dispatch({
-      action: GET_EVENT_DETAILS,
+      type: GET_EVENT_DETAILS,
       payload: event
     })
   } catch (error) {
@@ -41,7 +41,7 @@ export const GetEventsByZipcode = (zipcode) => async (dispatch) => {
     const eZipcode = await __GetEventsByZipcode(zipcode)
     console.log(eZipcode)
     dispatch({
-      action: GET_EVENTS_BY_ZIPCODE,
+      type: GET_EVENTS_BY_ZIPCODE,
       payload: eZipcode
     })
   } catch (error) {
