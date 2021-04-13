@@ -17,6 +17,8 @@ const UserReducer = (state = iState, action) => {
   switch (action.type) {
     case CREATE_EVENT:
       return { ...state, [action.payload.name]: action.payload.value }
+    case CREATE_BUSINESS:
+      return { ...state, [action.payload.name]: action.payload.value }
     case USER_ID:
       return {
         ...state,
