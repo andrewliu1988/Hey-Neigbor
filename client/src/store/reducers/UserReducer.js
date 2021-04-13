@@ -1,6 +1,7 @@
 import { CREATE_BUSINESS, CREATE_EVENT, USER_ID } from '../types'
 
 const iState = {
+  userBAndE: [],
   user_id: '',
   name: '',
   address: '',
@@ -15,6 +16,8 @@ const iState = {
 
 const UserReducer = (state = iState, action) => {
   switch (action.type) {
+    case USER_BUSINESSES_AND_EVENTS:
+      return { ...state, userBAndE: action.payload }
     case CREATE_EVENT:
       return { ...state, [action.payload.name]: action.payload.value }
     case CREATE_BUSINESS:
