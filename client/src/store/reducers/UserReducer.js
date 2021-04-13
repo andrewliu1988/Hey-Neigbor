@@ -1,4 +1,4 @@
-import { CREATE_BUSINESS, CREATE_EVENT } from '../types'
+import { CREATE_BUSINESS, CREATE_EVENT, USER_ID } from '../types'
 
 const iState = {
   user_id: '',

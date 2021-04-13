@@ -1,6 +1,6 @@
 import Client from './'
 
-export const __GetALlBusiness = () => {
+export const __GetALlBusiness = async () => {
   try {
     const res = await Client.get('/businesses')
     console.log(res)
@@ -10,8 +10,7 @@ export const __GetALlBusiness = () => {
   }
 }
 
-
-export const __GetBusinessDetails = (id) => {
+export const __GetBusinessDetails = async (id) => {
   try {
     const res = await Client.get(`/businesses/${id}`)
     console.log(res)
@@ -21,7 +20,7 @@ export const __GetBusinessDetails = (id) => {
   }
 }
 
-export const __GetBusinessByZipcode = (zipcode) => {
+export const __GetBusinessByZipcode = async (zipcode) => {
   try {
     const res = await Client.get(`businesses/${zipcode}`)
     console.log(res)
