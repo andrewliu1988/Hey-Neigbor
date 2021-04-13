@@ -12,6 +12,8 @@ const EventReducer = (state = iState, action) => {
       return { ...state, allEvent: action.payload}
     case GET_EVENT_DETAILS: 
       return {...state, eventDetails: action.payload}
+    default: 
+      return {...state}
   }
 }
 
