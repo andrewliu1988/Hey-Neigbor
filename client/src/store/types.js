@@ -6,6 +6,6 @@ export const AUTHENCTICATED = 'AUTHENTICATED'
 export const CREATE_BUSINESS = 'CREATE_BUSINESS'
 export const CREATE_EVENT = 'CREATE EVENT'
 export const USER_ID = "USER_ID"
-export const 
-export const 
+export const GET_BUSINESSES_BY_ZIPCODE = 'GET_BUSINESSES_BY_ZIPCODE'
+export const GET_EVENTS_BY_ZIPCODE = 'GET_EVENTS_BY_ZIPCODE'
 export const 

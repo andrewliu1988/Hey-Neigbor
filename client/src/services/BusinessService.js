@@ -20,3 +20,13 @@ export const __GetBusinessDetails = (id) => {
     throw error
   }
 }
+
+export const __GetBusinessByZipcode = (zipcode) => {
+  try {
+    const res = await Client.get(`businesses/${zipcode}`)
+    console.log(res)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

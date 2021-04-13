@@ -19,3 +19,13 @@ export const __GetEventDetails = async (id) => {
     throw error
   }
 }
+
+export const __GetEventsByZipcode = async (zipcode) => {
+  try {
+    const res = Client.get(`/events/${zipcode}`)
+    console.log(res)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
