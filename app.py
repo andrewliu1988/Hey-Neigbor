@@ -30,7 +30,7 @@ api.add_resource(ZipcodeBusiness, '/businesses/<string:zipcode>')
 
 api.add_resource(Events, '/events')
 api.add_resource(SingleEvent, '/events/<int:id>')
-api.add_resource(ZipCodeEvent, '/string/<string:id>')
+api.add_resource(ZipCodeEvent, '/events/<string:zipcode>')
 
 
 api.add_resource(Users, '/users')
@@ -38,7 +38,7 @@ api.add_resource(SingleUser, '/users/<int:id>')
 api.add_resource(UserBusinessEvent, '/users/businessevent/<int:id>')
 
 api.add_resource(Login, '/auth/login')
-api.add_reource(Register, '/auth/register')
+api.add_resource(Register, '/auth/register')
 
 
 if __name__ == '__main__':

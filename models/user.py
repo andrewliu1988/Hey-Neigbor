@@ -7,7 +7,7 @@ class User(db.Model):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), nullable=False)
+    username = db.Column(db.String(20), nullable=False, unique=True)
     email = db.Column(db.String(255), nullable=False, unique=True)
     password_digest = db.Column(db.String(100), nullable=False)
     zipcode = db.Column(db.String(15))
@@ -17,10 +17,10 @@ class User(db.Model):
                            nullable=False, onupdate=datetime.now())
     businesses = db.relationship(
         "Business", cascade='all', backref=db.backref('businesses', lazy=True))
-    events = db.relationship("Events", cascade='all',
+    events = db.relationship("Event", cascade='all',
                              backref=db.backref("events", lazy=True))
 
-    def __init__(self, username, email, password, zipcode):
+    def __init__(self, username, email, password_digest, zipcode):
         self.username = username
         self.email = email
         self.password_digest = password_digest
@@ -43,15 +43,15 @@ class User(db.Model):
     @classmethod
     def find_all(cls):
         users = User.query.all()
-        return [user.json() for users in Users]
+        return [user.json() for user in users]
 
     @classmethod
-    def find_by_email(cls, email):
-        return User.query.filter_by(email=email).first()
+    def find_by_username(cls, username):
+        return User.query.filter_by(username=username).first()
 
-     @classmethod
+    @classmethod
     def find_by_id(cls, id):
-        return User.query.filter_by(id=id).first()    
+        return User.query.filter_by(id=id).first()
 
     @classmethod
     def delete(cls, id):
@@ -63,7 +63,7 @@ class User(db.Model):
     @classmethod
     def include_event_business(self, user_id):
         user = User.query.options(joinedload('user_business'), joinedload(
-            'user_event').filter_by(id=user_id).first())
-        businesses = [b.json() for b in user.business]
-        events = [e.json() for e in user.event]
+            'user_event')).filter_by(id=user_id).first()
+        businesses = [b.json() for b in user.businesses]
+        events = [e.json() for e in user.events]
         return {**user.json(), 'businesses': businesses, 'events': events}

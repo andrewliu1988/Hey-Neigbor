@@ -6,7 +6,7 @@ from models.db import db
 
 class Events(Resource):
     def get(self):
-        event = Business.find_all()
+        event = Event.find_all()
         return event
 
     def post(self):
@@ -34,5 +34,5 @@ class SingleEvent(Resource):
 
 class ZipCodeEvent(Resource):
     def get(self, zipcode):
-        event = Event.find_by_zipcode(zipcode)
-        return event
+        events = Event.find_by_zipcode(zipcode)
+        return [event.json() for event in events]

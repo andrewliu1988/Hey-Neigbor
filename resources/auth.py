@@ -7,9 +7,9 @@ from middleware import create_token, gen_password, strip_token, read_token, comp
 class Login(Resource):
     def post(self):
         data = request.get_json()
-        user = User.find_by_email(data['email'])
+        user = User.find_by_username(data['username'])
         print(user)
-        if user and compare_password(data['password'], user.password.digest):
+        if user and compare_password(data['password'], user.password_digest):
             payload = {
                 'id': user.id,
                 'username': user.username
@@ -32,7 +32,8 @@ class Register(Resource):
         params = {
             "username": data['username'],
             "email": data['email'],
-            "password_digest": gen_password(data['password'])
+            "password_digest": gen_password(data['password']),
+            "zipcode": data['zipcode']
         }
         user = User(**params)
         user.create()

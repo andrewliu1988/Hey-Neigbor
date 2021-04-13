@@ -6,6 +6,7 @@ class Business(db.Model):
     __tablename__ = 'businesses'
 
     id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     address = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(255), nullable=False)
@@ -21,7 +22,8 @@ class Business(db.Model):
     user = db.relationship(
         "User", backref=db.backref("user_business", lazy=True))
 
-    def __init__(self, name, address, description, date, zipcode, website, longitude, langitude):
+    def __init__(self, user_id, name, address, description, date, zipcode, website, longitude, langitude):
+        self.user_id = user_id
         self.name = name
         self.address = address
         self.description = description
@@ -33,7 +35,9 @@ class Business(db.Model):
 
     def json(self):
         return {"id": self.id,
+                "user_id": self.user_id,
                 "name": self.name,
+                "address": self.address,
                 "description": self.description,
                 "date": self.date,
                 "zipcode": self.zipcode,
@@ -59,7 +63,7 @@ class Business(db.Model):
 
     @classmethod
     def find_by_zipcode(cls, zipcode):
-        return Business.query.filter_by(zipcode=zipcode)
+        return Business.query.filter_by(zipcode=zipcode).all()
 
     @classmethod
     def delete(cls, id):

@@ -34,5 +34,5 @@ class SingleBusiness(Resource):
 
 class ZipcodeBusiness(Resource):
     def get(self, zipcode):
-        business = Business.find_by_zipcode(zipcode)
-        return business
+        businesses = Business.find_by_zipcode(zipcode)
+        return [business.json() for business in businesses]
