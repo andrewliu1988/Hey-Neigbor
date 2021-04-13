@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage'
 import Events from './pages/Events'
 import Nav from './components/Nav'
 import BusinessDetails from './components/BusinessDetails'
+import EventDetails from './components/EventDetails'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             path="/business_details/:id"
             component={BusinessDetails}
           />
+          <Route exact path="/event_details/:id" component={EventDetails} />
         </Switch>
       </main>
     </div>

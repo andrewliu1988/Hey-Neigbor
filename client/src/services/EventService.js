@@ -12,7 +12,6 @@ export const __GetAllEvent = async () => {
 export const __GetEventDetails = async (id) => {
   try {
     const res = await Client.get(`/events/${id}`)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

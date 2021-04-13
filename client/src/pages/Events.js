@@ -26,7 +26,14 @@ const Events = (props) => {
       <h1>Events</h1>
       <div className="event-container">
         {events.length ? (
-          events.map((event, i) => <EventCard key={i} event={event} />)
+          events.map((event, i) => (
+            <div
+              onClick={() => props.history.push(`/event_details/${event.id}`)}
+              key={i}
+            >
+              <EventCard event={event} />
+            </div>
+          ))
         ) : (
           <h3>Loading </h3>
         )}

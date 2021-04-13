@@ -25,7 +25,6 @@ export const GetAllEvent = () => async (dispatch) => {
 export const GetEventDetails = (id) => async (dispatch) => {
   try {
     const event = await __GetEventDetails(id)
-    console.log(event)
     dispatch({
       type: GET_EVENT_DETAILS,
       payload: event
