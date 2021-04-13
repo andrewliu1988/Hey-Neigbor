@@ -17,9 +17,8 @@ const Homepage = (props) => {
   useEffect(() => {
     props.fetchAllBusiness()
   }, [])
-  console.log(props.businessState.allBusiness)
+
   let businesses = props.businessState.allBusiness
-  console.log(businesses)
 
   return (
     <div>

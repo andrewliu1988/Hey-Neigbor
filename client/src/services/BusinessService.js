@@ -3,7 +3,6 @@ import Client from './'
 export const __GetALlBusiness = async () => {
   try {
     const res = await Client.get('/businesses')
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

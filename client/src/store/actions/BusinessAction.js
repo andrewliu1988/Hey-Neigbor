@@ -13,7 +13,6 @@ import {
 export const GetAllBusiness = () => async (dispatch) => {
   try {
     const businesses = await __GetALlBusiness()
-    console.log(businesses)
     dispatch({
       type: GET_ALL_BUSINESS,
       payload: businesses
