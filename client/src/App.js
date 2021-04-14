@@ -7,6 +7,7 @@ import BusinessDetails from './components/BusinessDetails'
 import EventDetails from './components/EventDetails'
 import UserProfile from './pages/UserProfile'
 import CreateBusinessForm from './components/CreateBusinessForm'
+import CreateEventForm from './components/CreateEventForm'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/event_details/:id" component={EventDetails} />
           <Route exact path="/user_profile/:id" component={UserProfile} />
           <Route exact path="/create_business" component={CreateBusinessForm} />
+          <Route exact path="/create_event" component={CreateEventForm} />
         </Switch>
       </main>
     </div>

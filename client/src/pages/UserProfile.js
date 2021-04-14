@@ -29,6 +29,9 @@ const UserProfile = (props) => {
       <button onClick={() => props.history.push('/create_business')}>
         Create Business
       </button>
+      <button onClick={() => props.history.push('/create_event')}>
+        Create Event
+      </button>
 
       <div className="user-business">
         {userBusiness ? (
