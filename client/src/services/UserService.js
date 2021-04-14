@@ -45,3 +45,23 @@ export const __DeleteBusiness = async (id) => {
     throw error
   }
 }
+
+export const __UpdateEvent = async (formData, id) => {
+  try {
+    const res = await Client.post(`/events/${id}`, formData)
+    console.log(res)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
+
+export const __UpdateBusiness = async (formData, id) => {
+  try {
+    const res = await Client.post(`/businesses/${id}`, formData)
+    console.log(res)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}
