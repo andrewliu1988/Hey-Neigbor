@@ -39,68 +39,68 @@ const UserProfile = (props) => {
       <button onClick={() => props.history.push(`/create_event/${id}`)}>
         Create Event
       </button>
+      <div className="business_event_container">
+        <div className="user-business">
+          {userBusiness ? (
+            userBusiness.map((business, i) => (
+              <div key={i}>
+                <BusinessCard business={business} />
+                <button onClick={() => props.deleteBusiness(business.id)}>
+                  Delete
+                </button>
+                <button
+                  onClick={() =>
+                    props.history.push(`/business_details/${business.id}`)
+                  }
+                >
+                  View Details
+                </button>
+                <button
+                  onClick={(id) =>
+                    props.history.push(
+                      `/update_business/${business.id}/${business.user_id}`
+                    )
+                  }
+                >
+                  Update Business
+                </button>
+              </div>
+            ))
+          ) : (
+            <h3>Loading</h3>
+          )}
+        </div>
 
-      <div className="user-business">
-        {userBusiness ? (
-          userBusiness.map((business, i) => (
-            <div key={i}>
-              <BusinessCard business={business} />
-              <button onClick={() => props.deleteBusiness(business.id)}>
-                Delete
-              </button>
-              <br />
-              <button
-                onClick={() =>
-                  props.history.push(`/business_details/${business.id}`)
-                }
-              >
-                View Details
-              </button>
-              <button
-                onClick={(id) =>
-                  props.history.push(
-                    `/update_event/${business.id}/${business.user_id}`
-                  )
-                }
-              >
-                Update Business
-              </button>
-            </div>
-          ))
-        ) : (
-          <h3>Loading</h3>
-        )}
-      </div>
-
-      <div className="user-event">
-        {userEvent ? (
-          userEvent.map((event, i) => (
-            <div key={i}>
-              <EventCard event={event} />
-              <button onClick={() => props.deleteEvent(event.id)}>
-                Delete
-              </button>
-              <button
-                onClick={(id) =>
-                  props.history.push(`/event_details/${event.id}`)
-                }
-              >
-                View Details
-              </button>
-              <button
-                onClick={(id) =>
-                  props.history.push(
-                    `/update_event/${event.id}/${event.user_id}`
-                  )
-                }
-              >
-                Update Event
-              </button>
-            </div>
-          ))
-        ) : (
-          <h3>Loading</h3>
-        )}
+        <div className="user-event">
+          {userEvent ? (
+            userEvent.map((event, i) => (
+              <div key={i}>
+                <EventCard event={event} />
+                <button onClick={() => props.deleteEvent(event.id)}>
+                  Delete
+                </button>
+                <button
+                  onClick={(id) =>
+                    props.history.push(`/event_details/${event.id}`)
+                  }
+                >
+                  View Details
+                </button>
+                <button
+                  onClick={(id) =>
+                    props.history.push(
+                      `/update_event/${event.id}/${event.user_id}`
+                    )
+                  }
+                >
+                  Update Event
+                </button>
+              </div>
+            ))
+          ) : (
+            <h3>Loading</h3>
+          )}
+        </div>
       </div>
     </div>
   )

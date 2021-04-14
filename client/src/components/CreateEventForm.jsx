@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {CreateNewEvent, UploadEvent, SetUserId} from '../store/actions/UserAction'
+import {UpdateFormField, UploadEvent, SetUserId} from '../store/actions/UserAction'
 
 const mapStateToProps =({formState}) => {
   return{formState}
@@ -8,7 +8,7 @@ const mapStateToProps =({formState}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setCreateEvent: (formName, formValue) => dispatch(CreateNewEvent(formName, formValue)),
+    setCreateEvent: (formName, formValue) => dispatch(UpdateFormField(formName, formValue)),
     setUploadEvent: (formData) => dispatch(UploadEvent(formData)),
     setId: (id) => dispatch(SetUserId(id))
   }

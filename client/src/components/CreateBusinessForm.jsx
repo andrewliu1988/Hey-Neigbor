@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {CreateNewBusiness, UploadBusiness, SetUserId} from '../store/actions/UserAction'
+import {UpdateFormField, UploadBusiness, SetUserId} from '../store/actions/UserAction'
 
 const mapStateToProps =({formState}) => {
   return{formState}
@@ -8,7 +8,7 @@ const mapStateToProps =({formState}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setCreateBusiness: (formName, formValue) => dispatch(CreateNewBusiness(formName, formValue)),
+    setCreateBusiness: (formName, formValue) => dispatch(UpdateFormField(formName, formValue)),
     setUploadBusiness: (formData) => dispatch(UploadBusiness(formData)),
     setId: (id) => dispatch(SetUserId(id))
 

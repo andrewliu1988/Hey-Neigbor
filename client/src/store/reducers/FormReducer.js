@@ -1,9 +1,4 @@
-import {
-  CREATE_EVENT,
-  CREATE_BUSINESS,
-  USER_ID,
-  UPDATE_FORM_FIELD
-} from '../types'
+import { USER_ID, UPDATE_FORM_FIELD } from '../types'
 
 const iState = {
   user_id: '',
@@ -20,13 +15,6 @@ const iState = {
 
 const FormReducer = (state = iState, action) => {
   switch (action.type) {
-    case CREATE_BUSINESS:
-      return {
-        ...state,
-        [action.payload.name]: action.payload.value
-      }
-    case CREATE_EVENT:
-      return { ...state, [action.payload.name]: action.payload.value }
     case UPDATE_FORM_FIELD:
       return { ...state, [action.payload.name]: action.payload.value }
     case USER_ID:

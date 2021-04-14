@@ -10,8 +10,6 @@ import {
 
 import {
   USER_BUSINESSES_AND_EVENTS,
-  CREATE_BUSINESS,
-  CREATE_EVENT,
   UPLOAD_BUSINESS,
   UPLOAD_EVENT,
   USER_ID,
@@ -32,16 +30,6 @@ export const GetUserBAndE = (id) => async (dispatch) => {
     throw error
   }
 }
-
-export const CreateNewBusiness = (formName, formValue) => ({
-  type: CREATE_BUSINESS,
-  payload: { name: formName, value: formValue }
-})
-
-export const CreateNewEvent = (formName, formValue) => ({
-  type: CREATE_EVENT,
-  payload: { name: formName, value: formValue }
-})
 
 export const UploadBusiness = (formData) => async (dispatch) => {
   try {

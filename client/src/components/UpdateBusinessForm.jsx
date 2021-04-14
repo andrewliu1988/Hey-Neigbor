@@ -24,7 +24,7 @@ const UpdateBusinessForm = (props ) => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+
     const formData = {
       user_id: formUserId, 
       name: props.formState.name,  
