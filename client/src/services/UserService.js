@@ -19,8 +19,10 @@ export const __UploadBusiness = async (formData) => {
 }
 
 export const __UploadEvent = async (formData) => {
+  console.log(formData)
   try {
     const res = await Client.post('/events', formData)
+    console.log(res)
     return res.data
   } catch (error) {
     throw error

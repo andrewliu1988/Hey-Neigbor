@@ -25,8 +25,12 @@ function App() {
           />
           <Route exact path="/event_details/:id" component={EventDetails} />
           <Route exact path="/user_profile/:id" component={UserProfile} />
-          <Route exact path="/create_business" component={CreateBusinessForm} />
-          <Route exact path="/create_event" component={CreateEventForm} />
+          <Route
+            exact
+            path="/create_business/:id"
+            component={CreateBusinessForm}
+          />
+          <Route exact path="/create_event/:id" component={CreateEventForm} />
         </Switch>
       </main>
     </div>

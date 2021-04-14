@@ -4,12 +4,14 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import UserReducer from './reducers/UserReducer'
 import BusinessReducer from './reducers/BusinessReducer'
 import EventReducer from './reducers/EventReducer'
+import FormReducer from './reducers/FormReducer'
 
 const store = createStore(
   combineReducers({
     businessState: BusinessReducer,
     eventState: EventReducer,
-    userState: UserReducer
+    userState: UserReducer,
+    formState: FormReducer
   }),
   composeWithDevTools(applyMiddleware(thunk))
 )

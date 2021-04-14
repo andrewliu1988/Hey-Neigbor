@@ -9,7 +9,8 @@ import {
   CREATE_BUSINESS,
   CREATE_EVENT,
   UPLOAD_BUSINESS,
-  UPLOAD_EVENT
+  UPLOAD_EVENT,
+  USER_ID
 } from '../types'
 
 export const GetUserBAndE = (id) => async (dispatch) => {
@@ -48,6 +49,7 @@ export const UploadBusiness = (formData) => async (dispatch) => {
 }
 
 export const UploadEvent = (formData) => async (dispatch) => {
+  console.log(formData)
   try {
     const event = await __UploadEvent(formData)
     console.log(event)
@@ -59,3 +61,8 @@ export const UploadEvent = (formData) => async (dispatch) => {
     throw error
   }
 }
+
+export const SetUserId = (id) => ({
+  type: USER_ID,
+  payload: id
+})
