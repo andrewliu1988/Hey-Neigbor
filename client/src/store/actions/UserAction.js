@@ -1,6 +1,16 @@
-import { __GetUserBAndE } from '../../services/UserService'
+import {
+  __GetUserBAndE,
+  __UploadBusiness,
+  __UploadEvent
+} from '../../services/UserService'
 
-import { USER_BUSINESSES_AND_EVENTS } from '../types'
+import {
+  USER_BUSINESSES_AND_EVENTS,
+  CREATE_BUSINESS,
+  CREATE_EVENT,
+  UPLOAD_BUSINESS,
+  UPLOAD_EVENT
+} from '../types'
 
 export const GetUserBAndE = (id) => async (dispatch) => {
   try {
@@ -9,6 +19,42 @@ export const GetUserBAndE = (id) => async (dispatch) => {
     dispatch({
       type: USER_BUSINESSES_AND_EVENTS,
       payload: all
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const CreateNewBusiness = (formName, formValue) => ({
+  type: CREATE_BUSINESS,
+  payload: { name: formName, value: formValue }
+})
+
+export const CreateNewEvent = (formName, formValue) => ({
+  type: CREATE_EVENT,
+  payload: { name: formName, value: formValue }
+})
+
+export const UploadBusiness = (formData) => async (dispatch) => {
+  try {
+    const business = await __UploadBusiness(formData)
+    console.log(business)
+    dispatch({
+      type: UPLOAD_BUSINESS,
+      payload: business
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UploadEvent = (formData) => async (dispatch) => {
+  try {
+    const event = await __UploadEvent(formData)
+    console.log(event)
+    dispatch({
+      type: UPLOAD_EVENT,
+      payload: event
     })
   } catch (error) {
     throw error

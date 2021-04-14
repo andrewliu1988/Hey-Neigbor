@@ -2,7 +2,9 @@ import {
   CREATE_BUSINESS,
   CREATE_EVENT,
   USER_ID,
-  USER_BUSINESSES_AND_EVENTS
+  USER_BUSINESSES_AND_EVENTS,
+  UPLOAD_BUSINESS,
+  UPLOAD_EVENT
 } from '../types'
 
 const iState = {
@@ -27,6 +29,12 @@ const UserReducer = (state = iState, action) => {
       return { ...state, [action.payload.name]: action.payload.value }
     case CREATE_BUSINESS:
       return { ...state, [action.payload.name]: action.payload.value }
+    case UPLOAD_BUSINESS:
+      console.log(state.userBAndE)
+      return { ...state }
+    case UPLOAD_EVENT:
+      console.log(state.userBAndE)
+      return { ...state }
     case USER_ID:
       return {
         ...state,
