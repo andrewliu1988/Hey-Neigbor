@@ -13,11 +13,20 @@ const UserReducer = (state = iState, action) => {
     case USER_BUSINESSES_AND_EVENTS:
       return { ...state, userBAndE: action.payload }
     case DELETE_BUSINESS:
-      console.log(action.payload)
-      return { ...state }
+      const businessArr = state.userBAndE.businesses
+      const business = businessArr.filter(
+        (deleteBusiness, i) => deleteBusiness.id !== action.payload.data.payload
+      )
+      return {
+        ...state,
+        userBAndE: { ...state.userBAndE, businesses: business }
+      }
     case DELETE_EVENT:
-      console.log(action.payload)
-      return { ...state }
+      const eventArr = state.userBAndE.events
+      const event = eventArr.filter(
+        (deleteEvent, i) => deleteEvent.id !== action.payload.data.payload
+      )
+      return { ...state, userBAndE: { ...state.userBAndE, events: event } }
     default:
       return { ...state }
   }

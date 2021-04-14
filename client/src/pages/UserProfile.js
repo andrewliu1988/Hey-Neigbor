@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { GetUserBAndE } from '../store/actions/UserAction'
+import {
+  GetUserBAndE,
+  DeleteBusiness,
+  DeleteEvent
+} from '../store/actions/UserAction'
 import BusinessCard from '../components/BusinessCard'
 import EventCard from '../components/EventCard'
 
@@ -10,7 +14,9 @@ const mapStateToProps = ({ userState }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchBusinessAndEvent: (id) => dispatch(GetUserBAndE(id))
+    fetchBusinessAndEvent: (id) => dispatch(GetUserBAndE(id)),
+    deleteBusiness: (id) => dispatch(DeleteBusiness(id)),
+    deleteEvent: (id) => dispatch(DeleteEvent(id))
   }
 }
 
@@ -37,14 +43,19 @@ const UserProfile = (props) => {
       <div className="user-business">
         {userBusiness ? (
           userBusiness.map((business, i) => (
-            <div
-              onClick={() =>
-                props.history.push(`/business_details/${business.id}`)
-              }
-              key={i}
-            >
+            <div key={i}>
               <BusinessCard business={business} />
-              <button>Delete</button>
+              <button onClick={() => props.deleteBusiness(business.id)}>
+                Delete
+              </button>
+              <br />
+              <button
+                onClick={() =>
+                  props.history.push(`/business_details/${business.id}`)
+                }
+              >
+                View Details
+              </button>
             </div>
           ))
         ) : (
@@ -55,12 +66,20 @@ const UserProfile = (props) => {
       <div className="user-event">
         {userEvent ? (
           userEvent.map((event, i) => (
-            <div
-              onClick={() => props.history.push(`/event_details/${event.id}`)}
-              key={i}
-            >
-              <EventCard event={event} />
-              <button>Delete</button>
+            <div key={i}>
+              <EventCard
+                event={event}
+                onClick={() => props.history.push(`/event_details/${event.id}`)}
+                key={i}
+              />
+              <button onClick={() => props.deleteEvent(event.id)}>
+                Delete
+              </button>
+              <button
+                onClick={() => props.history.push(`/event_details/${event.id}`)}
+              >
+                View Details
+              </button>
             </div>
           ))
         ) : (
