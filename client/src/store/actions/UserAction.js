@@ -15,7 +15,6 @@ import {
 export const GetUserBAndE = (id) => async (dispatch) => {
   try {
     const all = await __GetUserBAndE(id)
-    console.log(all)
     dispatch({
       type: USER_BUSINESSES_AND_EVENTS,
       payload: all
