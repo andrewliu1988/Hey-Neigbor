@@ -59,7 +59,7 @@ const UserProfile = (props) => {
               <button
                 onClick={(id) =>
                   props.history.push(
-                    `/update/${business.id}/${business.user_id}`
+                    `/update_event/${business.id}/${business.user_id}`
                   )
                 }
               >
@@ -86,6 +86,15 @@ const UserProfile = (props) => {
                 }
               >
                 View Details
+              </button>
+              <button
+                onClick={(id) =>
+                  props.history.push(
+                    `/update_event/${event.id}/${event.user_id}`
+                  )
+                }
+              >
+                Update Event
               </button>
             </div>
           ))

@@ -46,7 +46,7 @@ export const __DeleteBusiness = async (id) => {
   }
 }
 
-export const __UpdateEvent = async (formData, id) => {
+export const __UpdateEvent = async (id, formData) => {
   try {
     const res = await Client.put(`/events/${id}`, formData)
     console.log(res)

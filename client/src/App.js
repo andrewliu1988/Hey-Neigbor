@@ -9,6 +9,7 @@ import UserProfile from './pages/UserProfile'
 import CreateBusinessForm from './components/CreateBusinessForm'
 import CreateEventForm from './components/CreateEventForm'
 import UpdateBusinessForm from './components/UpdateBusinessForm'
+import UpdateEventForm from './components/UpdateEventForm'
 
 function App() {
   return (
@@ -34,8 +35,13 @@ function App() {
           <Route exact path="/create_event/:id" component={CreateEventForm} />
           <Route
             exact
-            path="/update/:id/:user_id"
+            path="/update_business/:id/:user_id"
             component={UpdateBusinessForm}
+          />
+          <Route
+            exact
+            path="/update_event/:id/:user_id"
+            component={UpdateEventForm}
           />
         </Switch>
       </main>

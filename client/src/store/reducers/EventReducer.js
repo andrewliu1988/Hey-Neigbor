@@ -18,10 +18,13 @@ const EventReducer = (state = iState, action) => {
       return { ...state, allEvent: action.payload }
     case GET_EVENT_DETAILS:
       return { ...state, eventDetails: action.payload }
-    case UPDATE_EVENT:
+    case UPLOAD_EVENT:
       return { ...state, allEvent: [...state.allEvent, action.payload] }
     case GET_EVENTS_BY_ZIPCODE:
       return { ...state, zipcodeEvent: action.payload }
+    case UPDATE_EVENT:
+      console.log(action.payload)
+      return { ...state }
     default:
       return { ...state }
   }
