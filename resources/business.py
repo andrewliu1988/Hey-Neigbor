@@ -29,6 +29,7 @@ class SingleBusiness(Resource):
         data = request.get_json()
         for key in data:
             setattr(business, key, data[key])
+        db.session.commit()
         return business.json()
 
 

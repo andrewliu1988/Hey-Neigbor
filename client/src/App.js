@@ -8,6 +8,7 @@ import EventDetails from './components/EventDetails'
 import UserProfile from './pages/UserProfile'
 import CreateBusinessForm from './components/CreateBusinessForm'
 import CreateEventForm from './components/CreateEventForm'
+import UpdateBusinessForm from './components/UpdateBusinessForm'
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
             component={CreateBusinessForm}
           />
           <Route exact path="/create_event/:id" component={CreateEventForm} />
+          <Route
+            exact
+            path="/update/:id/:user_id"
+            component={UpdateBusinessForm}
+          />
         </Switch>
       </main>
     </div>

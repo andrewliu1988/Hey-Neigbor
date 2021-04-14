@@ -2,7 +2,8 @@ import {
   GET_ALL_BUSINESS,
   GET_BUSINESS_DETIALS,
   GET_BUSINESSES_BY_ZIPCODE,
-  UPLOAD_BUSINESS
+  UPLOAD_BUSINESS,
+  UPDATE_BUSINESS
 } from '../types'
 
 const iState = {
@@ -19,6 +20,9 @@ const BusinessReducer = (state = iState, action) => {
       return { ...state, businessDetails: action.payload }
     case UPLOAD_BUSINESS:
       return { ...state, allBusiness: [...state.allBusiness, action.payload] }
+    case UPDATE_BUSINESS:
+      console.log(action.payload)
+      return { ...state }
     case GET_BUSINESSES_BY_ZIPCODE:
       return { ...state, zipcodeBusiness: action.payload }
     default:

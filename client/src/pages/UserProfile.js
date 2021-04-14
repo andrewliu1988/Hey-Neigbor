@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const UserProfile = (props) => {
   let id = 1
-  console.log(props.userState.userBAndE)
   let userBusiness = props.userState.userBAndE.businesses
   let userEvent = props.userState.userBAndE.events
 
@@ -57,6 +56,15 @@ const UserProfile = (props) => {
               >
                 View Details
               </button>
+              <button
+                onClick={(id) =>
+                  props.history.push(
+                    `/update/${business.id}/${business.user_id}`
+                  )
+                }
+              >
+                Update Business
+              </button>
             </div>
           ))
         ) : (
@@ -68,16 +76,14 @@ const UserProfile = (props) => {
         {userEvent ? (
           userEvent.map((event, i) => (
             <div key={i}>
-              <EventCard
-                event={event}
-                onClick={() => props.history.push(`/event_details/${event.id}`)}
-                key={i}
-              />
+              <EventCard event={event} />
               <button onClick={() => props.deleteEvent(event.id)}>
                 Delete
               </button>
               <button
-                onClick={() => props.history.push(`/event_details/${event.id}`)}
+                onClick={(id) =>
+                  props.history.push(`/event_details/${event.id}`)
+                }
               >
                 View Details
               </button>

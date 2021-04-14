@@ -29,6 +29,7 @@ class SingleEvent(Resource):
         data = request.get_json()
         for key in data:
             setattr(event, key, data[key])
+        db.session.commit()
         return event.json()
 
 

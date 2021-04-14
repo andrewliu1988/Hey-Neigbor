@@ -2,7 +2,8 @@ import {
   GET_ALL_EVENT,
   GET_EVENT_DETAILS,
   GET_EVENTS_BY_ZIPCODE,
-  UPLOAD_EVENT
+  UPLOAD_EVENT,
+  UPDATE_EVENT
 } from '../types'
 
 const iState = {
@@ -17,7 +18,7 @@ const EventReducer = (state = iState, action) => {
       return { ...state, allEvent: action.payload }
     case GET_EVENT_DETAILS:
       return { ...state, eventDetails: action.payload }
-    case UPLOAD_EVENT:
+    case UPDATE_EVENT:
       return { ...state, allEvent: [...state.allEvent, action.payload] }
     case GET_EVENTS_BY_ZIPCODE:
       return { ...state, zipcodeEvent: action.payload }

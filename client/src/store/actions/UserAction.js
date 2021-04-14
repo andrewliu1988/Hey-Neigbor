@@ -3,7 +3,9 @@ import {
   __UploadBusiness,
   __UploadEvent,
   __DeleteBusiness,
-  __DeleteEvent
+  __DeleteEvent,
+  __UpdateBusiness,
+  __UpdateEvent
 } from '../../services/UserService'
 
 import {
@@ -14,7 +16,9 @@ import {
   UPLOAD_EVENT,
   USER_ID,
   DELETE_BUSINESS,
-  DELETE_EVENT
+  DELETE_EVENT,
+  UPDATE_FORM_FIELD,
+  UPDATE_BUSINESS
 } from '../types'
 
 export const GetUserBAndE = (id) => async (dispatch) => {
@@ -92,3 +96,29 @@ export const DeleteBusiness = (id) => async (dispatch) => {
     throw error
   }
 }
+
+export const UpdateBusiness = (id, formData) => async (dispatch) => {
+  try {
+    const updateBusiness = await __UpdateBusiness(id, formData)
+    dispatch({
+      type: UPDATE_BUSINESS,
+      payload: updateBusiness
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UpdateEvent = (id, formData) => async (dispatch) => {
+  try {
+    const updateEvent = await __UpdateEvent(id, formData)
+    console.log(updateEvent)
+  } catch (error) {
+    throw error
+  }
+}
+
+export const UpdateFormField = (formName, formValue) => ({
+  type: UPDATE_FORM_FIELD,
+  payload: { name: formName, value: formValue }
+})
