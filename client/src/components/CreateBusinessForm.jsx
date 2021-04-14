@@ -38,7 +38,7 @@ const CreateBusinessForm = (props) => {
       zipcode:props.formState.zipcode,
       website: props.formState.website,
       longitude:props.formState.longitude,
-      langitude: props.formState.langitude
+      latitude: props.formState.latitude
       })
   }
 
@@ -102,9 +102,9 @@ const CreateBusinessForm = (props) => {
             className="input-feild"/>
             <br/>
         <input 
-            name="langitude"
-            placeholder="langitude"
-            value = {props.formState.langitude}
+            name="latitude"
+            placeholder="latitude"
+            value = {props.formState.latitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>

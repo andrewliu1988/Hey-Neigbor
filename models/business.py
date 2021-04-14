@@ -14,7 +14,7 @@ class Business(db.Model):
     zipcode = db.Column(db.String(15), nullable=False)
     website = db.Column(db.String(255), nullable=False)
     longitude = db.Column(db.String(50), nullable=False)
-    langitude = db.Column(db.String(50), nullable=False)
+    latitude = db.Column(db.String(50), nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
@@ -22,7 +22,7 @@ class Business(db.Model):
     user = db.relationship(
         "User", backref=db.backref("user_business", lazy=True))
 
-    def __init__(self, user_id, name, address, description, date, zipcode, website, longitude, langitude):
+    def __init__(self, user_id, name, address, description, date, zipcode, website, longitude, latitude):
         self.user_id = user_id
         self.name = name
         self.address = address
@@ -31,7 +31,7 @@ class Business(db.Model):
         self.zipcode = zipcode
         self.website = website
         self.longitude = longitude
-        self.langitude = langitude
+        self.latitude = latitude
 
     def json(self):
         return {"id": self.id,
@@ -43,7 +43,7 @@ class Business(db.Model):
                 "zipcode": self.zipcode,
                 "website": self.website,
                 "longitude": self.longitude,
-                "langitude": self.langitude,
+                "latitude": self.latitude,
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}
 

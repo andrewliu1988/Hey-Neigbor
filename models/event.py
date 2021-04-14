@@ -14,7 +14,7 @@ class Event(db.Model):
     zipcode = db.Column(db.String(15), nullable=False)
     website = db.Column(db.String(255), nullable=False)
     longitude = db.Column(db.String(50), nullable=False)
-    langitude = db.Column(db.String(50), nullable=False)
+    latitude = db.Column(db.String(50), nullable=False)
     attendees = db.Column(db.Integer, nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
@@ -22,7 +22,7 @@ class Event(db.Model):
                            nullable=False, onupdate=datetime.now())
     user = db.relationship("User", backref=db.backref("user_event", lazy=True))
 
-    def __init__(self, user_id,  name, address, description, date, zipcode, website, longitude, langitude, attendees):
+    def __init__(self, user_id,  name, address, description, date, zipcode, website, longitude, latitude, attendees):
         self.user_id = user_id
         self.name = name
         self.address = address
@@ -31,7 +31,7 @@ class Event(db.Model):
         self.zipcode = zipcode
         self.website = website
         self.longitude = longitude
-        self.langitude = langitude
+        self.latitude = latitude
         self.attendees = attendees
 
     def json(self):
@@ -44,7 +44,7 @@ class Event(db.Model):
                 "zipcode": self.zipcode,
                 "website": self.website,
                 "longitude": self.longitude,
-                "langitude": self.langitude,
+                "latitude": self.latitude,
                 "attendees": self.attendees,
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}

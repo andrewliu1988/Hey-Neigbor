@@ -9,7 +9,7 @@ const iState = {
   zipcode: '',
   website: '',
   longitude: '',
-  langitude: '',
+  latitude: '',
   attendees: ''
 }
 
@@ -33,7 +33,7 @@ const FormReducer = (state = iState, action) => {
         zipcode: '',
         website: '',
         longitude: '',
-        langitude: '',
+        latitude: '',
         attendees: ''
       }
     default:

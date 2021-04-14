@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const UserProfile = (props) => {
   let id = 1
+  console.log(props.userState.userBAndE)
   let userBusiness = props.userState.userBAndE.businesses
   let userEvent = props.userState.userBAndE.events
 
