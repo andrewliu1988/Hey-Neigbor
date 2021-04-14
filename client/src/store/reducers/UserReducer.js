@@ -13,8 +13,10 @@ const UserReducer = (state = iState, action) => {
     case USER_BUSINESSES_AND_EVENTS:
       return { ...state, userBAndE: action.payload }
     case DELETE_BUSINESS:
+      console.log(action.payload)
       return { ...state }
     case DELETE_EVENT:
+      console.log(action.payload)
       return { ...state }
     default:
       return { ...state }
