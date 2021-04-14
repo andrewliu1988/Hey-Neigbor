@@ -1,85 +1,110 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {CreateNewBusiness, UploadBusiness} from '../store/actions/UserAction'
+import {CreateNewBusiness, UploadBusiness, SetUserId} from '../store/actions/UserAction'
 
-const mapStateToProps =({userState}) => {
-  return{userState}
+const mapStateToProps =({formState}) => {
+  return{formState}
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setCreateBusiness: (formName, formValue) => dispatch(CreateNewBusiness(formName, formValue)),
-    setUploadBusiness: (formData) => dispatch(UploadBusiness(formData))
+    setUploadBusiness: (formData) => dispatch(UploadBusiness(formData)),
+    setId: (id) => dispatch(SetUserId(id))
+
   }
 }
 
 const CreateBusinessForm = (props) => {
 
+  let user_id = props.match.params.id
+
+  useEffect(()=> {
+    props.setId(user_id)
+    //eslint-disable-next-line
+  },[props.user_id] )
+
   const handleChange=(e) => {
     props.setCreateBusiness(e.target.name, e.target.value)
   }
+
+  const handleSubmit=(e) => {
+    props.setUploadBusiness({
+      user_id: props.formState.user_id, 
+      name: props.formState.name,  
+      address:props.formState.address,
+      description:props.formState.description,
+      date:props.formState.date,
+      zipcode:props.formState.zipcode,
+      website: props.formState.website,
+      longitude:props.formState.longitude,
+      langitude: props.formState.langitude
+      })
+  }
+
+
   return (
     <div> 
       <h1>Create Business Form</h1>
-      <form>
-        <input
-        type='hidden'
-        name='user_id'
-        value = {props.userState.user_id}
-        />
+      <form type="submit" onSubmit={handleSubmit}>
+          <input
+          type='hidden'
+          name='user_id'
+          value = {props.formState.user_id}
+          />
         <input
             name="name"
             placeholder="name"
-            value = {props.userState.name}
+            value = {props.formState.name}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input
             name="address"
             placeholder="address"
-            value = {props.userState.address}
+            value = {props.formState.address}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <textarea
             name="description"
             placeholder="description"
-            value = {props.userState.description}
+            value = {props.formState.description}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
             name="date"
             placeholder="date"
-            value = {props.userState.date}
+            value = {props.formState.date}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
             name="zipcode"
             placeholder="zipcode"
-            value = {props.userState.zipcode}
+            value = {props.formState.zipcode}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
             name="website"
             placeholder="website"
-            value = {props.userState.website}
+            value = {props.formState.website}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
-            name="name"
-            placeholder="name"
-            value = {props.userState.longitude}
+            name="longitude"
+            placeholder="longitude"
+            value = {props.formState.longitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
-            name="name"
-            placeholder="name"
-            value = {props.userState.langitude}
+            name="langitude"
+            placeholder="langitude"
+            value = {props.formState.langitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>

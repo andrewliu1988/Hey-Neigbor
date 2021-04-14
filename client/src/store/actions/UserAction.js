@@ -36,6 +36,7 @@ export const CreateNewEvent = (formName, formValue) => ({
 })
 
 export const UploadBusiness = (formData) => async (dispatch) => {
+  console.log(formData)
   try {
     const business = await __UploadBusiness(formData)
     console.log(business)
@@ -49,7 +50,6 @@ export const UploadBusiness = (formData) => async (dispatch) => {
 }
 
 export const UploadEvent = (formData) => async (dispatch) => {
-  console.log(formData)
   try {
     const event = await __UploadEvent(formData)
     console.log(event)

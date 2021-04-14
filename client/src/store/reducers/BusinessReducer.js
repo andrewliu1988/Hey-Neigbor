@@ -18,8 +18,7 @@ const BusinessReducer = (state = iState, action) => {
     case GET_BUSINESS_DETIALS:
       return { ...state, businessDetails: action.payload }
     case UPLOAD_BUSINESS:
-      console.log(state.allBusiness)
-      return { ...state }
+      return { ...state, allBusiness: [...state.allBusiness, action.payload] }
     case GET_BUSINESSES_BY_ZIPCODE:
       return { ...state, zipcodeBusiness: action.payload }
     default:

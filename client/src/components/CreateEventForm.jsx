@@ -15,12 +15,12 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const CreateEventForm = (props) => {
-  let user_id = props.match.params.id
+  let id = props.match.params.id
 
   useEffect(() => {
-    props.setId(user_id)
-
-  },[user_id])
+    props.setId(id)
+    //eslint-disable-next-line
+  },[id])
   
 
   const handleChange=(e) => {
@@ -28,7 +28,7 @@ const CreateEventForm = (props) => {
   }
 
   const handleSubmit=(e)=> {
-    e.preventDefault()
+    // e.preventDefault()
     props.setUploadEvent(props.formState)
   }
 

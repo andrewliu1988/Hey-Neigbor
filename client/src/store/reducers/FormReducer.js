@@ -16,7 +16,10 @@ const iState = {
 const FormReducer = (state = iState, action) => {
   switch (action.type) {
     case CREATE_BUSINESS:
-      return { ...state, [action.payload.name]: action.payload.value }
+      return {
+        ...state,
+        [action.payload.name]: action.payload.value
+      }
     case CREATE_EVENT:
       return { ...state, [action.payload.name]: action.payload.value }
     case USER_ID:

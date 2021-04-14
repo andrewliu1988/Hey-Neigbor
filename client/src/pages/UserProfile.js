@@ -21,6 +21,7 @@ const UserProfile = (props) => {
 
   useEffect(() => {
     props.fetchBusinessAndEvent(id)
+    //eslint-disable-next-line
   }, [])
 
   return (
@@ -43,6 +44,7 @@ const UserProfile = (props) => {
               key={i}
             >
               <BusinessCard business={business} />
+              <button>Delete</button>
             </div>
           ))
         ) : (
@@ -58,6 +60,7 @@ const UserProfile = (props) => {
               key={i}
             >
               <EventCard event={event} />
+              <button>Delete</button>
             </div>
           ))
         ) : (
