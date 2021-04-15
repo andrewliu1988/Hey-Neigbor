@@ -2,7 +2,8 @@ import Client from './'
 
 export const __SignUp = async (authForm) => {
   try {
-    const res = await Client.post('/auth/register')
+    const res = await Client.post('/auth/register', authForm)
+    console.log(res)
     return res.data
   } catch (error) {
     throw error

@@ -28,10 +28,11 @@ class Login(Resource):
 class Register(Resource):
     def post(self):
         data = request.get_json()
+        print(data)
         params = {
             "username": data['username'],
             "email": data['email'],
-            "password_digest": gen_password(data['password']),
+            "password_digest": gen_password(data['password_digest']),
             "zipcode": data['zipcode']
         }
         user = User(**params)

@@ -10,6 +10,7 @@ import CreateBusinessForm from './components/CreateBusinessForm'
 import CreateEventForm from './components/CreateEventForm'
 import UpdateBusinessForm from './components/UpdateBusinessForm'
 import UpdateEventForm from './components/UpdateEventForm'
+import RegisterForm from './components/RegisterForm'
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             path="/update_event/:id/:user_id"
             component={UpdateEventForm}
           />
+          <Route path="/register" component={RegisterForm} />
         </Switch>
       </main>
     </div>
