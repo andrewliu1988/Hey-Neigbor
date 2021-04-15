@@ -15,10 +15,10 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Homepage = (props) => {
-  useEffect(() => {
-    props.fetchAllBusiness()
-    //eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   props.fetchAllBusiness()
+  //   //eslint-disable-next-line
+  // }, [])
 
   // let businesses = props.businessState.allBusiness
 
