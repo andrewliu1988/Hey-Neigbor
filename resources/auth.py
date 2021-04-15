@@ -8,7 +8,6 @@ class Login(Resource):
     def post(self):
         data = request.get_json()
         user = User.find_by_username(data['username'])
-        print(user)
         if user and compare_password(data['password'], user.password_digest):
             payload = {
                 'id': user.id,
