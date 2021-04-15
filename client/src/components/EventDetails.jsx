@@ -31,7 +31,9 @@ const EventDetails = (props) => {
       <h3>{eventDetails.address} {eventDetails.zipcode} </h3>
       <a href={eventDetails.website}>{eventDetails.website}</a>
       <p>{eventDetails.description}</p>
-      <p>{eventDetails.attendees}</p>      
+      <p>{eventDetails.attendees}</p>
+      <p>{eventDetails.longitude}</p>
+      <p>{eventDetails.latitude}</p>      
     </div>
   )
 }

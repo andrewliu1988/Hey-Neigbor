@@ -31,6 +31,8 @@ const BusinessDetails = (props) => {
       <h3>{businessDetails.address} {businessDetails.zipcode} </h3>
       <a href={businessDetails.website}>{businessDetails.website}</a>
       <p>{businessDetails.description}</p>
+      <p> {businessDetails.longitude}</p>
+      <p>{businessDetails.latitude}</p>
     </div>
   )
 }

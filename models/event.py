@@ -13,8 +13,8 @@ class Event(db.Model):
     date = db.Column(db.String(50), nullable=False)
     zipcode = db.Column(db.String(15), nullable=False)
     website = db.Column(db.String(255), nullable=False)
-    longitude = db.Column(db.String(50), nullable=False)
-    latitude = db.Column(db.String(50), nullable=False)
+    longitude = db.Column(db.String(15), nullable=False)
+    latitude = db.Column(db.String(15), nullable=False)
     attendees = db.Column(db.Integer, nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)

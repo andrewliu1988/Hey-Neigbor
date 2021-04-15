@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetAllBusiness } from '../store/actions/BusinessAction'
-import BusinessCard from '../components/BusinessCard'
+// import BusinessCard from '../components/BusinessCard'
+import Map from '../components/MapBox'
 
 const mapStateToProps = ({ businessState }) => {
   return { businessState }
@@ -19,12 +20,12 @@ const Homepage = (props) => {
     //eslint-disable-next-line
   }, [])
 
-  let businesses = props.businessState.allBusiness
+  // let businesses = props.businessState.allBusiness
 
   return (
     <div>
       <h2>Homepage</h2>
-      <div className="business-container">
+      {/* <div className="business-container">
         {businesses.length ? (
           businesses.map((business, i) => (
             <div
@@ -39,7 +40,8 @@ const Homepage = (props) => {
         ) : (
           <h3>Loading</h3>
         )}
-      </div>
+      </div> */}
+      <Map />
     </div>
   )
 }
