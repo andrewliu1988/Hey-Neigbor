@@ -84,16 +84,16 @@ const CreateEventForm = (props) => {
             className="input-feild"/>
             <br/>
         <input 
-            name="longitude"
-            placeholder="longitude"
-            value = {props.formState.longitude}
+            name="latitude"
+            placeholder="latitude"
+            value = {props.formState.latitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
         <input 
-            name="latitude"
-            placeholder="latitude"
-            value = {props.formState.latitude}
+            name="longitude"
+            placeholder="longitude"
+            value = {props.formState.longitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>        

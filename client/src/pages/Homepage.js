@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetAllBusiness } from '../store/actions/BusinessAction'
 // import BusinessCard from '../components/BusinessCard'
-import Map from '../components/MapBox'
+import BusinessMap from '../components/BusinessMap'
 
 const mapStateToProps = ({ businessState }) => {
   return { businessState }
@@ -41,7 +41,7 @@ const Homepage = (props) => {
           <h3>Loading</h3>
         )}
       </div> */}
-      <Map />
+      <BusinessMap />
     </div>
   )
 }

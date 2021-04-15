@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { GetAllEvent } from '../store/actions/EventAction'
 import EventCard from '../components/EventCard'
+import EventMap from '../components/EventMapBox'
 
 const mapStateToProps = ({ eventState }) => {
   return { eventState }
@@ -14,17 +15,17 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const Events = (props) => {
-  useEffect(() => {
-    props.fetchAllEvent()
-    //eslint-disable-next-line
-  }, [])
+  // useEffect(() => {
+  //   props.fetchAllEvent()
+  //   //eslint-disable-next-line
+  // }, [])
 
-  let events = props.eventState.allEvent
+  // let events = props.eventState.allEvent
 
   return (
     <div>
       <h1>Events</h1>
-      <div className="event-container">
+      {/* <div className="event-container">
         {events.length ? (
           events.map((event, i) => (
             <div
@@ -37,7 +38,9 @@ const Events = (props) => {
         ) : (
           <h3>Loading </h3>
         )}
-      </div>
+      </div> */}
+
+      <EventMap />
     </div>
   )
 }

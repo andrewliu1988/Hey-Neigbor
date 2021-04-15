@@ -5,20 +5,20 @@ const iState = {
   password: '',
   email: '',
   zipcode: '',
-  authenicated: false,
+  authenticated: false,
   current_user: null
 }
 
 const AuthReducer = (state = iState, action) => {
   switch (action.type) {
     case AUTH_FORM:
-      return { ...state, [aciton.payload.name]: action.payload.value }
+      return { ...state, [action.payload.name]: action.payload.value }
     case REGISTER:
       return { ...state }
     case LOGIN:
       return { ...state }
     case AUTHENCTICATED:
-      return { ...state, authenicated: !authenicated }
+      return { ...state, authenticated: !state.authenticated }
     default:
       return { ...state }
   }
