@@ -32,10 +32,10 @@ export const ToggleCompleteRegister = (payload) => ({
   payload: payload
 })
 
-// export const ToggleAuthenicated = (payload) => ({
-//   type: AUTHENCTICATED,
-//   payload: payload
-// })
+export const ToggleAuthenicated = (payload) => ({
+  type: AUTHENCTICATED,
+  payload: payload
+})
 
 export const SetUser = (payload) => ({
   type: CURRENT_USER,

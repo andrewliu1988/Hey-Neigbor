@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch) => {
 
 
 const Login = (props) => {
+  // props
 
   const handleChange =(e) => {
     props.setSignInForm(e.target.name, e.target.value)
@@ -30,6 +31,7 @@ const Login = (props) => {
     }
     try {
       props.setLogin(authForm)
+      props.history.push('/')
     } catch (error) {
       return alert('Your username or password is incorrect')
     }
