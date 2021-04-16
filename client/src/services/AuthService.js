@@ -12,7 +12,8 @@ export const __SignUp = async (authForm) => {
 
 export const __SignIn = async (authForm) => {
   try {
-    const res = await Client.post('/auth/login')
+    const res = await Client.post('/auth/login', authForm)
+    localStorage.setItem('token', res.data.token)
     console.log(res)
     return res.data
   } catch (error) {
@@ -24,6 +25,6 @@ export const __CheckSession = async () => {
   try {
     const res = await Client.get('/auth/login')
   } catch (error) {
-    throw error
+    return alert('Your username or password is incorrect')
   }
 }

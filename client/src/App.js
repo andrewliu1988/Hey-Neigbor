@@ -11,6 +11,17 @@ import CreateEventForm from './components/CreateEventForm'
 import UpdateBusinessForm from './components/UpdateBusinessForm'
 import UpdateEventForm from './components/UpdateEventForm'
 import RegisterForm from './components/RegisterForm'
+import Login from './components/Login'
+import { CheckSession } from './store/actions/AuthAction'
+import { connect } from 'react-redux'
+
+const mapStateToProps = ({ authState }) => {
+  return { authState }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {}
+}
 
 function App() {
   return (
@@ -45,10 +56,11 @@ function App() {
             component={UpdateEventForm}
           />
           <Route path="/register" component={RegisterForm} />
+          <Route path="/login" component={Login} />
         </Switch>
       </main>
     </div>
   )
 }
 
-export default App
+export default connect(mapStateToProps, mapDispatchToProps)(App)

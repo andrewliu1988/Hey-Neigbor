@@ -5,3 +5,8 @@
   margin: auto;
   gap: 1em 1em;
 }
+
+.map-icon {
+  width: 2em;
+  height: 2em;
+}

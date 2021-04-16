@@ -8,8 +8,8 @@ import {
 import BusinessCard from '../components/BusinessCard'
 import EventCard from '../components/EventCard'
 
-const mapStateToProps = ({ userState }) => {
-  return { userState }
+const mapStateToProps = ({ userState, authState }) => {
+  return { userState, authState }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const UserProfile = (props) => {
-  let id = 1
+  let id = props.authState.current_user.payload.id
+  console.log(props.authState.current_user.payload.id)
   let userBusiness = props.userState.userBAndE.businesses
   let userEvent = props.userState.userBAndE.events
 

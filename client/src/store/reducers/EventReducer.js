@@ -23,7 +23,6 @@ const EventReducer = (state = iState, action) => {
     case GET_EVENTS_BY_ZIPCODE:
       return { ...state, zipcodeEvent: action.payload }
     case UPDATE_EVENT:
-      console.log(action.payload)
       return { ...state }
     default:
       return { ...state }

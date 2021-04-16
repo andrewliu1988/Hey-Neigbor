@@ -41,17 +41,18 @@ const EventMap = (props) => {
       width = "75vw" 
       height=  "75vh"
       onViewportChange={setViewPort}
-      mapStyle = "mapbox://styles/aliusei125/ckni6au3u0aky17o4frw04x15"
+      mapStyle = "mapbox://styles/aliusei125/ckni696d90ajp17o752tg39bv"
       > 
       
       <div className="event-container">
         {events ? events.map((event, i) => (
-          <div>
+          <div key={i}>
             <Link to={(`/event_details/${event.id}`)}>
               <Marker
               latitude={parseFloat(event.latitude)} longitude={parseFloat(event.longitude)}
               >
-                <button>{event.name}</button>
+                <img className="map-icon" src='https://i.imgur.com/jB84JLZ.png'/> 
+                {/* <button>{event.name}</button> */}
               </Marker>
             </Link>
           </div>

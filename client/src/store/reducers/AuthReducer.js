@@ -3,7 +3,8 @@ import {
   AUTH_FORM,
   REGISTER,
   LOGIN,
-  TOGGLE_REGISTER_COMPLETE
+  TOGGLE_REGISTER_COMPLETE,
+  CURRENT_USER
 } from '../types'
 
 const iState = {
@@ -23,9 +24,9 @@ const AuthReducer = (state = iState, action) => {
     case REGISTER:
       return { ...state }
     case LOGIN:
-      return { ...state }
+      return { ...state, current_user: action.payload }
     case AUTHENCTICATED:
-      return { ...state, authenticated: !state.authenticated }
+      return { ...state, authenticated: action.payload }
     case TOGGLE_REGISTER_COMPLETE:
       return { ...state, register_complete: action.payload }
     default:

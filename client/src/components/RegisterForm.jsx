@@ -60,7 +60,7 @@ const RegisterForm = (props) => {
           name="zipcode"
           placeholder="zipcode"
           value={props.authState.zipcode}
-          onchange={handleChange}
+          onChange={handleChange}
           />
           <button> Register</button>
         </form>
