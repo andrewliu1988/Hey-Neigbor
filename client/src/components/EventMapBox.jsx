@@ -52,7 +52,6 @@ const EventMap = (props) => {
               latitude={parseFloat(event.latitude)} longitude={parseFloat(event.longitude)}
               >
                 <img className="map-icon" src='https://i.imgur.com/jB84JLZ.png'/> 
-                {/* <button>{event.name}</button> */}
               </Marker>
             </Link>
           </div>

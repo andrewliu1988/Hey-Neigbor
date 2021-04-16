@@ -45,10 +45,10 @@ export const SetUser = (payload) => ({
 export const SignIn = (authForm) => async (dispatch) => {
   try {
     const signin = await __SignIn(authForm)
-    console.log(signin)
+    console.log(signin.payload.id)
     dispatch({
       type: LOGIN,
-      payload: signin
+      payload: signin.payload.id
     })
     dispatch({
       type: AUTHENCTICATED,
@@ -62,14 +62,13 @@ export const SignIn = (authForm) => async (dispatch) => {
 export const CheckSession = (token) => async (dispatch) => {
   try {
     const check = await __CheckSession(token)
-    console.log(check)
     dispatch({
       type: AUTHENCTICATED,
       payload: true
     })
     dispatch({
       type: CURRENT_USER,
-      payload: check
+      payload: check.id
     })
   } catch (error) {
     throw error

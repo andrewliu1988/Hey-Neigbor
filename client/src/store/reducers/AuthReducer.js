@@ -29,6 +29,8 @@ const AuthReducer = (state = iState, action) => {
       return { ...state, authenticated: action.payload }
     case TOGGLE_REGISTER_COMPLETE:
       return { ...state, register_complete: action.payload }
+    case CURRENT_USER:
+      return { ...state, current_user: action.payload }
     default:
       return { ...state }
   }

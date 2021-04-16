@@ -14,17 +14,17 @@ export const __SignIn = async (authForm) => {
   try {
     const res = await Client.post('/auth/login', authForm)
     localStorage.setItem('token', res.data.token)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error
   }
 }
 
-export const __CheckSession = async () => {
+export const __CheckSession = async (tokent) => {
   try {
     const res = await Client.get('/auth/login')
+    return res.data
   } catch (error) {
-    return alert('Your username or password is incorrect')
+    throw error
   }
 }

@@ -43,7 +43,7 @@ const BusinessMap = (props) => {
           width = "75vw" 
           height=  "75vh"
           onViewportChange={setViewPort}
-          mapStyle = "mapbox://styles/aliusei125/ckni6au3u0aky17o4frw04x15"
+          mapStyle = "mapbox://styles/aliusei125/ckni696d90ajp17o752tg39bv"
       >
 
         <div className="business-container">
@@ -55,7 +55,7 @@ const BusinessMap = (props) => {
                   <Marker
                   latitude={parseFloat(business.latitude)} longitude={parseFloat(business.longitude)}
                   >
-                  <button>{business.name}</button>
+                    <img className="map-icon" src='https://i.imgur.com/jB84JLZ.png'/> 
                   </Marker>
                 </Link>
               </div>

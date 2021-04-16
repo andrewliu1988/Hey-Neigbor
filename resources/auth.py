@@ -7,8 +7,6 @@ from middleware import create_token, gen_password, strip_token, read_token, comp
 class Login(Resource):
     def post(self):
         data = request.get_json()
-        print(data)
-
         user = User.find_by_username(data['username'])
         print(user)
         if user and compare_password(data['password_digest'], user.password_digest):

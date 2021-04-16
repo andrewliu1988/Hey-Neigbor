@@ -14,16 +14,24 @@ import RegisterForm from './components/RegisterForm'
 import Login from './components/Login'
 import { CheckSession } from './store/actions/AuthAction'
 import { connect } from 'react-redux'
+import React, { useEffect } from 'react'
 
 const mapStateToProps = ({ authState }) => {
   return { authState }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    checkSession: (token) => dispatch(CheckSession(token))
+  }
 }
 
-function App() {
+function App(props) {
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    props.checkSession(token)
+  }, [props.authState.current_user])
+
   return (
     <div>
       <Nav />

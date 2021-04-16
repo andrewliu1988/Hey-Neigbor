@@ -5,6 +5,7 @@ import {
   DeleteBusiness,
   DeleteEvent
 } from '../store/actions/UserAction'
+import { CheckSession } from '../store/actions/AuthAction'
 import BusinessCard from '../components/BusinessCard'
 import EventCard from '../components/EventCard'
 
@@ -16,20 +17,20 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchBusinessAndEvent: (id) => dispatch(GetUserBAndE(id)),
     deleteBusiness: (id) => dispatch(DeleteBusiness(id)),
-    deleteEvent: (id) => dispatch(DeleteEvent(id))
+    deleteEvent: (id) => dispatch(DeleteEvent(id)),
+    checkSession: (token) => dispatch(CheckSession(token))
   }
 }
 
 const UserProfile = (props) => {
-  let id = props.authState.current_user.payload.id
-  console.log(props.authState.current_user.payload.id)
+  let id = props.authState.current_user
   let userBusiness = props.userState.userBAndE.businesses
   let userEvent = props.userState.userBAndE.events
 
   useEffect(() => {
     props.fetchBusinessAndEvent(id)
     //eslint-disable-next-line
-  }, [])
+  }, [id])
 
   return (
     <div>
