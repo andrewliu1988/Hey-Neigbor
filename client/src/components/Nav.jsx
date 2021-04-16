@@ -2,7 +2,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 import { connect } from 'react-redux'
 import {
-  CheckSession,
   ToggleAuthenicated,
   SetUser
 } from '../store/actions/AuthAction'
@@ -26,19 +25,20 @@ const Nav =(props) => {
     localStorage.clear()
     props.toggleAuthenticated(false)
     props.setUser(null)
-
   }
-  console.log(props.authState.authenticated)
+
   let authenticated = props.authState.authenticated
   return (
     <div> 
       <nav> 
         <NavLink to='/'> Business</NavLink>
         <NavLink to='/events'>Events</NavLink>
-        {authenticated ?<NavLink to='/user_profile/:id'> User Profile</NavLink>:      <NavLink to='/register'>Register</NavLink> }
+        {authenticated ?<NavLink to='/user_profile/:id'> User Profile</NavLink>:
+        <NavLink to='/register'>Register</NavLink> }
         
   
-        {authenticated ?<NavLink to='/' onClick={logOut}> Logout </NavLink>:<NavLink to='/login'>Login</NavLink>}     
+        {authenticated ?<NavLink to='/' onClick={logOut}> Logout </NavLink>:
+        <NavLink to='/login'>Login</NavLink>}     
       </nav>
     </div>
   )

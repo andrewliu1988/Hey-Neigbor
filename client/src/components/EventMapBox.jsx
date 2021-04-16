@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const EventMap = (props) => {
   let events = props.eventState.allEvent
+
   useEffect(()=> {
     props.fetchAllEvent()
   }, [])
