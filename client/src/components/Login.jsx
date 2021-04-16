@@ -17,14 +17,12 @@ const mapDispatchToProps = (dispatch) => {
 
 
 const Login = (props) => {
-  // props
 
   const handleChange =(e) => {
     props.setSignInForm(e.target.name, e.target.value)
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
     const authForm = {
       username: props.authState.username,
       password_digest: props.authState.password_digest

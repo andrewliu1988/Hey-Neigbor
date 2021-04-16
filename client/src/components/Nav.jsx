@@ -1,19 +1,47 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom'
+import { connect } from 'react-redux'
+import {
+  CheckSession,
+  ToggleAuthenicated,
+  SetUser
+} from '../store/actions/AuthAction'
+
+const mapStateToProps =({authState}) => {
+  return {authState}
+}
+
+const mapDispatchToProps=(dispatch) => {
+  return{
+    toggleAuthenticated: () => dispatch(ToggleAuthenicated()),
+    setUser: () => dispatch(SetUser)
+  }
+  
+}
+
+const Nav =(props) => {
 
 
-const Nav =() => {
+  const logOut = () => {
+    localStorage.clear()
+    props.toggleAuthenticated(false)
+    props.setUser(null)
+
+  }
+  console.log(props.authState.authenticated)
+  let authenticated = props.authState.authenticated
   return (
     <div> 
       <nav> 
         <NavLink to='/'> Business</NavLink>
         <NavLink to='/events'>Events</NavLink>
-        <NavLink to='/user_profile/:id'> User Profile</NavLink>
-        <NavLink to='/register'>Register</NavLink> 
-        <NavLink to='/login'>Login</NavLink>       
+        {authenticated ?<NavLink to='/user_profile/:id'> User Profile</NavLink>:      <NavLink to='/register'>Register</NavLink> }
+        
+  
+        {authenticated ?<NavLink to='/' onClick={logOut}> Logout </NavLink>:<NavLink to='/login'>Login</NavLink>}     
       </nav>
     </div>
   )
 }
 
-export default Nav
+export default connect(mapStateToProps,mapDispatchToProps) (Nav)
