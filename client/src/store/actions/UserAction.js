@@ -35,7 +35,6 @@ export const GetUserBAndE = (id) => async (dispatch) => {
 export const UploadBusiness = (formData) => async (dispatch) => {
   try {
     const business = await __UploadBusiness(formData)
-    console.log(business)
     dispatch({
       type: UPLOAD_BUSINESS,
       payload: business
@@ -101,7 +100,7 @@ export const UpdateBusiness = (id, formData) => async (dispatch) => {
 export const UpdateEvent = (id, formData) => async (dispatch) => {
   try {
     const updateEvent = await __UpdateEvent(id, formData)
-    console.log(updateEvent)
+    return updateEvent
   } catch (error) {
     throw error
   }

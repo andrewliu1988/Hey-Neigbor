@@ -42,7 +42,6 @@ export const GetEventDetails = (id) => async (dispatch) => {
 export const GetEventsByZipcode = (zipcode) => async (dispatch) => {
   try {
     const eZipcode = await __GetEventsByZipcode(zipcode)
-    console.log(eZipcode)
     dispatch({
       type: GET_EVENTS_BY_ZIPCODE,
       payload: eZipcode
@@ -55,7 +54,6 @@ export const GetEventsByZipcode = (zipcode) => async (dispatch) => {
 export const AddressToCoordinates = (formData) => async (dispatch) => {
   try {
     const convert = await __AddressToCoordinates(formData)
-    console.log(convert)
     dispatch({
       type: ADDRESS_TO_COORDINATES,
       payload: convert

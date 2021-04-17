@@ -17,7 +17,6 @@ export const AuthFormField = (formName, formValue) => ({
 export const SignUp = (authForm) => async (dispatch) => {
   try {
     const register = await __SignUp(authForm)
-    console.log(register)
     dispatch({
       type: REGISTER,
       payload: register

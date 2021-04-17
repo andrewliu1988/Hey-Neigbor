@@ -19,9 +19,6 @@ const mapDispatchToProps = (dispatch) => {
 const UpdateEventForm = (props) => {
   const id = props.match.params.id
   const formUserId = props.match.params.user_id
-  console.log(props.eventState.eventDetails.user_id)
-
-
 
   useEffect(() => {
     props.fetchDetails(id)

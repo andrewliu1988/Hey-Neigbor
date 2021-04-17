@@ -29,7 +29,6 @@ class User(db.Model):
     def json(self):
         return {"id": self.id,
                 "username": self.username,
-                "email": self.email,
                 "zipcode": self.zipcode,
                 "created_at": str(self.created_at),
                 "updated_at": str(self.updated_at)}

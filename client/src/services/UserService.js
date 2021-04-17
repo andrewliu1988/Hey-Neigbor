@@ -21,7 +21,6 @@ export const __UploadBusiness = async (formData) => {
 export const __UploadEvent = async (formData) => {
   try {
     const res = await Client.post('/events', formData)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error
@@ -49,7 +48,6 @@ export const __DeleteBusiness = async (id) => {
 export const __UpdateEvent = async (id, formData) => {
   try {
     const res = await Client.put(`/events/${id}`, formData)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error

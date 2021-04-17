@@ -42,7 +42,6 @@ export const GetBusinessDetails = (id) => async (dispatch) => {
 export const GetBusinessByZipcode = (zipcode) => async (dispatch) => {
   try {
     const bZipcode = await __GetBusinessByZipcode(zipcode)
-    console.log(bZipcode)
     dispatch({
       type: GET_BUSINESSES_BY_ZIPCODE,
       payload: bZipcode
@@ -55,7 +54,6 @@ export const GetBusinessByZipcode = (zipcode) => async (dispatch) => {
 export const AddressToCoordinates = (formData) => async (dispatch) => {
   try {
     const convert = await __AddressToCoordinates(formData)
-    console.log(convert)
     dispatch({
       type: ADDRESS_TO_COORDINATES,
       payload: convert

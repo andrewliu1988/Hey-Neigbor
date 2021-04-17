@@ -21,7 +21,6 @@ export const __GetEventDetails = async (id) => {
 export const __GetEventsByZipcode = async (zipcode) => {
   try {
     const res = await Client.get(`/eventszipcode/${zipcode}`)
-    console.log(res)
     return res.data
   } catch (error) {
     throw error
