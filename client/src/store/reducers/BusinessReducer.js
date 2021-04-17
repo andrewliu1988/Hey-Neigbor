@@ -3,13 +3,15 @@ import {
   GET_BUSINESS_DETIALS,
   GET_BUSINESSES_BY_ZIPCODE,
   UPLOAD_BUSINESS,
-  UPDATE_BUSINESS
+  UPDATE_BUSINESS,
+  ADDRESS_TO_COORDINATES
 } from '../types'
 
 const iState = {
   allBusiness: [],
   businessDetails: {},
-  zipcodeBusiness: []
+  zipcodeBusiness: [],
+  businessCoordinates: {}
 }
 
 const BusinessReducer = (state = iState, action) => {
@@ -25,6 +27,8 @@ const BusinessReducer = (state = iState, action) => {
       return { ...state }
     case GET_BUSINESSES_BY_ZIPCODE:
       return { ...state, zipcodeBusiness: action.payload }
+    case ADDRESS_TO_COORDINATES:
+      return { ...state, businessCoordinates: action.payload }
     default:
       return { ...state }
   }

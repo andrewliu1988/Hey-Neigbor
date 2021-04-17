@@ -3,13 +3,15 @@ import {
   GET_EVENT_DETAILS,
   GET_EVENTS_BY_ZIPCODE,
   UPLOAD_EVENT,
-  UPDATE_EVENT
+  UPDATE_EVENT,
+  ADDRESS_TO_COORDINATES
 } from '../types'
 
 const iState = {
   allEvent: [],
   eventDetails: {},
-  zipcodeEvent: []
+  zipcodeEvent: [],
+  eventCoordinates: {}
 }
 
 const EventReducer = (state = iState, action) => {
@@ -24,6 +26,8 @@ const EventReducer = (state = iState, action) => {
       return { ...state, zipcodeEvent: action.payload }
     case UPDATE_EVENT:
       return { ...state }
+    case ADDRESS_TO_COORDINATES:
+      return { ...state, eventCoordinates: action.payload }
     default:
       return { ...state }
   }
