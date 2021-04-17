@@ -1,4 +1,4 @@
-import { USER_ID, UPDATE_FORM_FIELD } from '../types'
+import { USER_ID, UPDATE_FORM_FIELD, CONVERTER_INPUT } from '../types'
 
 const iState = {
   user_id: '',
@@ -10,12 +10,15 @@ const iState = {
   website: '',
   longitude: '',
   latitude: '',
-  attendees: ''
+  attendees: '',
+  location: ''
 }
 
 const FormReducer = (state = iState, action) => {
   switch (action.type) {
     case UPDATE_FORM_FIELD:
+      return { ...state, [action.payload.name]: action.payload.value }
+    case CONVERTER_INPUT:
       return { ...state, [action.payload.name]: action.payload.value }
     case USER_ID:
       return {

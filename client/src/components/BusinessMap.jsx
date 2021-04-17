@@ -26,7 +26,7 @@ const BusinessMap = (props) => {
     height: "100wh",
     latitude: 40.7128,
     longitude: -74.0060,
-    zoom:12
+    zoom: 4
   })
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const BusinessMap = (props) => {
       <ReactMapGL 
           mapboxApiAccessToken={TOKEN}
           {...viewport}
-          width = "75vw" 
+          width = "100vw" 
           height=  "75vh"
           onViewportChange={setViewPort}
           mapStyle = "mapbox://styles/aliusei125/ckni696d90ajp17o752tg39bv"

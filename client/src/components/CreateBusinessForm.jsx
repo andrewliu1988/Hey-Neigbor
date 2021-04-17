@@ -1,16 +1,19 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {UpdateFormField, UploadBusiness, SetUserId} from '../store/actions/UserAction'
+import {UpdateFormField, UploadBusiness, SetUserId, ConverterInput} from '../store/actions/UserAction'
+import {AddressToCoordinates} from '../store/actions/BusinessAction'
 
-const mapStateToProps =({formState}) => {
-  return{formState}
+const mapStateToProps =({formState, businessState}) => {
+  return{formState, businessState}
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     setCreateBusiness: (formName, formValue) => dispatch(UpdateFormField(formName, formValue)),
     setUploadBusiness: (formData) => dispatch(UploadBusiness(formData)),
-    setId: (id) => dispatch(SetUserId(id))
+    setId: (id) => dispatch(SetUserId(id)), 
+    converterInput: (formName, formValue) => dispatch(ConverterInput(formName, formValue)),
+    convertAddress: (formData) => dispatch(AddressToCoordinates(formData))
 
   }
 }
@@ -22,14 +25,32 @@ const CreateBusinessForm = (props) => {
   useEffect(()=> {
     props.setId(user_id)
     //eslint-disable-next-line
-  },[props.user_id] )
+  },[props.buisnessState] )
 
   const handleChange=(e) => {
     props.setCreateBusiness(e.target.name, e.target.value)
   }
 
+  const handleInput =(e) => {
+    props.converterInput(e.target.name, e.target.value)
+  }
+
+
+  const handleConvert = async (e) => {
+    e.preventDefault()
+    try {
+      await props.convertAddress(props.formState.location)
+    } catch (error) {
+      throw error
+    }
+
+  }
+
+
+
   const handleSubmit=(e) => {
-    props.setUploadBusiness({
+    e.preventDefault()
+    try {props.setUploadBusiness({
       user_id: props.formState.user_id, 
       name: props.formState.name,  
       address:props.formState.address,
@@ -37,15 +58,46 @@ const CreateBusinessForm = (props) => {
       date:props.formState.date,
       zipcode:props.formState.zipcode,
       website: props.formState.website,
-      longitude:props.formState.longitude,
-      latitude: props.formState.latitude
-      })
+      longitude: props.businessState.businessCoordinates.location.lng,
+      latitude: props.businessState.businessCoordinates.location.lat
+      })     
+    } catch (error) {
+      throw error
+    }
+    
   }
 
 
   return (
     <div> 
       <h1>Create Business Form</h1>
+
+    <div>
+    <form>
+      <input
+      text="text"
+      className="convertAddressField"
+      placeholder="address, zipcode, or location"
+      name="location"
+      onChange={handleInput}
+      />
+      <button onClick={handleConvert}>Add Coordinates</button>
+    </form>
+     </div>
+    
+    <div>
+        {props.businessState.businessCoordinates.length ? 
+          <div>
+            <p>{props.businessState.businessCoordinates.formatted_address}</p>
+            <p>{props.businessState.businessCoordinates.location.lat}</p>
+            <p>{props.businessState.businessCoordinates.location.lng}</p>
+          </div>
+          :
+          <div></div> 
+          
+        }
+    </div>
+
       <form type="submit" onSubmit={handleSubmit}>
           <input
           type='hidden'
@@ -73,7 +125,8 @@ const CreateBusinessForm = (props) => {
             onChange={handleChange}
             className="input-feild"/>
             <br/>
-        <input 
+        <input
+            type ="date"
             name="date"
             placeholder="date"
             value = {props.formState.date}
@@ -91,20 +144,6 @@ const CreateBusinessForm = (props) => {
             name="website"
             placeholder="website"
             value = {props.formState.website}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="longitude"
-            placeholder="longitude"
-            value = {props.formState.longitude}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="latitude"
-            placeholder="latitude"
-            value = {props.formState.latitude}
             onChange={handleChange}
             className="input-feild"/>
             <br/>

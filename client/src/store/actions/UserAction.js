@@ -16,7 +16,8 @@ import {
   DELETE_BUSINESS,
   DELETE_EVENT,
   UPDATE_FORM_FIELD,
-  UPDATE_BUSINESS
+  UPDATE_BUSINESS,
+  CONVERTER_INPUT
 } from '../types'
 
 export const GetUserBAndE = (id) => async (dispatch) => {
@@ -108,5 +109,10 @@ export const UpdateEvent = (id, formData) => async (dispatch) => {
 
 export const UpdateFormField = (formName, formValue) => ({
   type: UPDATE_FORM_FIELD,
+  payload: { name: formName, value: formValue }
+})
+
+export const ConverterInput = (formName, formValue) => ({
+  type: CONVERTER_INPUT,
   payload: { name: formName, value: formValue }
 })
