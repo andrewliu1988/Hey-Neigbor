@@ -4,10 +4,13 @@ import {
   __GetBusinessByZipcode
 } from '../../services/BusinessService'
 
+import { __AddressToCoordinates } from '../../services/GeoCodioService'
+
 import {
   GET_ALL_BUSINESS,
   GET_BUSINESSES_BY_ZIPCODE,
-  GET_BUSINESS_DETIALS
+  GET_BUSINESS_DETIALS,
+  ADDRESS_TO_COORDINATES
 } from '../types'
 
 export const GetAllBusiness = () => async (dispatch) => {
@@ -41,6 +44,19 @@ export const GetBusinessByZipcode = (zipcode) => async (dispatch) => {
     dispatch({
       type: GET_BUSINESSES_BY_ZIPCODE,
       payload: bZipcode
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const AddressToCoordinates = (formData) => async (dispatch) => {
+  try {
+    const convert = await __AddressToCoordinates(formData)
+    console.log(convert)
+    dispatch({
+      type: ADDRESS_TO_COORDINATES,
+      payload: convert
     })
   } catch (error) {
     throw error

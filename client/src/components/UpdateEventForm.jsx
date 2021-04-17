@@ -25,6 +25,7 @@ const UpdateEventForm = (props) => {
 
   useEffect(() => {
     props.fetchDetails(id)
+    //eslint-disable-next-line
   },[])
 
   const handleChange=(e)=> {

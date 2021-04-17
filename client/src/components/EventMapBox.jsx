@@ -23,6 +23,7 @@ const EventMap = (props) => {
 
   useEffect(()=> {
     props.fetchAllEvent()
+    //eslint-disable-next-line
   }, [])
 
   const  [viewport, setViewPort] = useState({
@@ -52,7 +53,7 @@ const EventMap = (props) => {
               <Marker
               latitude={parseFloat(event.latitude)} longitude={parseFloat(event.longitude)}
               >
-                <img className="map-icon" src='https://i.imgur.com/jB84JLZ.png'/> 
+                <img className="map-icon" src='https://i.imgur.com/jB84JLZ.png' alt ="map box pin"/> 
               </Marker>
             </Link>
           </div>
