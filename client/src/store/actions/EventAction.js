@@ -4,10 +4,13 @@ import {
   __GetEventDetails
 } from '../../services/EventService'
 
+import { __AddressToCoordinates } from '../../services/GeoCodioService'
+
 import {
   GET_ALL_EVENT,
   GET_EVENTS_BY_ZIPCODE,
-  GET_EVENT_DETAILS
+  GET_EVENT_DETAILS,
+  ADDRESS_TO_COORDINATES
 } from '../types'
 
 export const GetAllEvent = () => async (dispatch) => {
@@ -41,6 +44,19 @@ export const GetEventsByZipcode = (zipcode) => async (dispatch) => {
     dispatch({
       type: GET_EVENTS_BY_ZIPCODE,
       payload: eZipcode
+    })
+  } catch (error) {
+    throw error
+  }
+}
+
+export const AddressToCoordinates = (formData) => async (dispatch) => {
+  try {
+    const convert = await __AddressToCoordinates(formData)
+    console.log(convert)
+    dispatch({
+      type: ADDRESS_TO_COORDINATES,
+      payload: convert
     })
   } catch (error) {
     throw error

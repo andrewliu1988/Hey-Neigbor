@@ -25,7 +25,7 @@ const CreateBusinessForm = (props) => {
   useEffect(()=> {
     props.setId(user_id)
     //eslint-disable-next-line
-  },[props.buisnessState] )
+  },[user_id] )
 
   const handleChange=(e) => {
     props.setCreateBusiness(e.target.name, e.target.value)
