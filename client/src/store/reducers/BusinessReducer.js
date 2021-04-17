@@ -4,14 +4,16 @@ import {
   GET_BUSINESSES_BY_ZIPCODE,
   UPLOAD_BUSINESS,
   UPDATE_BUSINESS,
-  ADDRESS_TO_COORDINATES
+  ADDRESS_TO_COORDINATES,
+  TOGGLE_BUSINESS_ADDRESS
 } from '../types'
 
 const iState = {
   allBusiness: [],
   businessDetails: {},
   zipcodeBusiness: [],
-  businessCoordinates: {}
+  businessCoordinates: {},
+  toggle_business_address: false
 }
 
 const BusinessReducer = (state = iState, action) => {
@@ -29,6 +31,8 @@ const BusinessReducer = (state = iState, action) => {
       return { ...state, zipcodeBusiness: action.payload }
     case ADDRESS_TO_COORDINATES:
       return { ...state, businessCoordinates: action.payload }
+    case TOGGLE_BUSINESS_ADDRESS:
+      return { ...state, toggle_business_address: action.payload }
     default:
       return { ...state }
   }

@@ -26,7 +26,8 @@ const RegisterForm = (props) => {
     props.setRegister({username: props.authState.username, 
     email: props.authState.email,
     password_digest: props.authState.password_digest,
-  zipcode: props.authState.zipcode})
+    zipcode: props.authState.zipcode})
+    props.history.push('/login')
   }
 
   return (

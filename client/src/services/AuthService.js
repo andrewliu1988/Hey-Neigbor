@@ -20,7 +20,7 @@ export const __SignIn = async (authForm) => {
   }
 }
 
-export const __CheckSession = async (tokent) => {
+export const __CheckSession = async (token) => {
   try {
     const res = await Client.get('/auth/login')
     return res.data

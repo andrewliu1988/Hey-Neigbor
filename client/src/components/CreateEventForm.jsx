@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {UpdateFormField, UploadEvent, SetUserId, ConverterInput} from '../store/actions/UserAction'
-import {AddressToCoordinates} from '../store/actions/EventAction'
+import {AddressToCoordinates, ToggleEventAddress} from '../store/actions/EventAction'
 
 const mapStateToProps =({formState, eventState}) => {
   return{formState, eventState}
@@ -13,13 +13,14 @@ const mapDispatchToProps = (dispatch) => {
     setUploadEvent: (formData) => dispatch(UploadEvent(formData)),
     setId: (id) => dispatch(SetUserId(id)),
     converterInput: (formName, formValue) => dispatch(ConverterInput(formName, formValue)),
-    convertAddress: (formData) => dispatch(AddressToCoordinates(formData))
+    convertAddress: (formData) => dispatch(AddressToCoordinates(formData)),
+    toggleEventAddress: () => dispatch(ToggleEventAddress())
   }
 }
 
 const CreateEventForm = (props) => {
 
-  // console.log(props.eventState.eventCoordinates.location.lat)
+
   let id = props.match.params.id
 
   useEffect(() => {
@@ -60,6 +61,7 @@ const CreateEventForm = (props) => {
     } catch (error) {
       throw error
     }
+    props.toggleEventAddress(true)
   }
 
 
@@ -70,24 +72,17 @@ const CreateEventForm = (props) => {
       <h1>Create Event Form</h1>
 
     <div>
-    <form>
-      <input
-      text="text"
-      className="convertAddressField"
-      placeholder="address, zipcode, or location"
-      name="location"
-      onChange={handleInput}
-      />
-      <button onClick={handleConvert}>Add Coordinates</button>
-    </form>
+      <form>
+        <input
+          text="text"
+          className="convertAddressField"
+          placeholder="address, zipcode, or location"
+          name="location"
+          onChange={handleInput}
+          />
+          <button onClick={handleConvert}>Add Coordinates</button>
+      </form>
      </div>
-
-
-
-
-
-
-
 
 
       <form type='submit' onSubmit={handleSubmit}>

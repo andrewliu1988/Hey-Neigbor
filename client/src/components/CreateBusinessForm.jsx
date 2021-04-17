@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {UpdateFormField, UploadBusiness, SetUserId, ConverterInput} from '../store/actions/UserAction'
-import {AddressToCoordinates} from '../store/actions/BusinessAction'
+import {AddressToCoordinates, ToggleBusinessAddress} from '../store/actions/BusinessAction'
 
 const mapStateToProps =({formState, businessState}) => {
   return{formState, businessState}
@@ -13,7 +13,8 @@ const mapDispatchToProps = (dispatch) => {
     setUploadBusiness: (formData) => dispatch(UploadBusiness(formData)),
     setId: (id) => dispatch(SetUserId(id)), 
     converterInput: (formName, formValue) => dispatch(ConverterInput(formName, formValue)),
-    convertAddress: (formData) => dispatch(AddressToCoordinates(formData))
+    convertAddress: (formData) => dispatch(AddressToCoordinates(formData)),
+    toggleBusinessAddress: () => dispatch(ToggleBusinessAddress())
 
   }
 }
@@ -43,7 +44,7 @@ const CreateBusinessForm = (props) => {
     } catch (error) {
       throw error
     }
-
+    props.toggleBusinessAddress(true)
   }
 
 
@@ -53,10 +54,10 @@ const CreateBusinessForm = (props) => {
     try {props.setUploadBusiness({
       user_id: props.formState.user_id, 
       name: props.formState.name,  
-      address:props.formState.address,
+      address: props.businessState.businessCoordinates.formatted_address,
       description:props.formState.description,
       date:props.formState.date,
-      zipcode:props.formState.zipcode,
+      zipcode:props.businessState.businessCoordinates.address_components.zip,
       website: props.formState.website,
       longitude: props.businessState.businessCoordinates.location.lng,
       latitude: props.businessState.businessCoordinates.location.lat
@@ -86,7 +87,7 @@ const CreateBusinessForm = (props) => {
      </div>
     
     <div>
-        {props.businessState.businessCoordinates.length ? 
+        {props.businessState.businessCoordinates.location ? 
           <div>
             <p>{props.businessState.businessCoordinates.formatted_address}</p>
             <p>{props.businessState.businessCoordinates.location.lat}</p>

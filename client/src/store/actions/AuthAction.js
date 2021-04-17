@@ -45,7 +45,6 @@ export const SetUser = (payload) => ({
 export const SignIn = (authForm) => async (dispatch) => {
   try {
     const signin = await __SignIn(authForm)
-    console.log(signin.payload.id)
     dispatch({
       type: LOGIN,
       payload: signin.payload.id

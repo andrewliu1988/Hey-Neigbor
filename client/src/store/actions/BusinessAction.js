@@ -10,7 +10,8 @@ import {
   GET_ALL_BUSINESS,
   GET_BUSINESSES_BY_ZIPCODE,
   GET_BUSINESS_DETIALS,
-  ADDRESS_TO_COORDINATES
+  ADDRESS_TO_COORDINATES,
+  TOGGLE_BUSINESS_ADDRESS
 } from '../types'
 
 export const GetAllBusiness = () => async (dispatch) => {
@@ -62,3 +63,8 @@ export const AddressToCoordinates = (formData) => async (dispatch) => {
     throw error
   }
 }
+
+export const ToggleBusinessAddress = (payload) => ({
+  type: TOGGLE_BUSINESS_ADDRESS,
+  payload: payload
+})
