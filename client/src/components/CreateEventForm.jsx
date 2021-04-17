@@ -38,10 +38,10 @@ const CreateEventForm = (props) => {
     props.setUploadEvent({      
       user_id: props.formState.user_id, 
       name: props.formState.name,  
-      address:props.formState.address,
+      address:props.eventState.eventCoordinates.formatted_address,
       description:props.formState.description,
       date:props.formState.date,
-      zipcode:props.formState.zipcode,
+      zipcode:props.eventState.eventCoordinates.address_components.zip,
       website: props.formState.website,
       longitude: props.eventState.eventCoordinates.location.lng,
       latitude: props.eventState.eventCoordinates.location.lat,
@@ -84,6 +84,17 @@ const CreateEventForm = (props) => {
       </form>
      </div>
 
+     <div>
+        {props.eventState.eventCoordinates.location ? 
+          <div>
+            <p>{props.eventState.eventCoordinates.formatted_address}</p>
+          </div>
+          :
+          <div></div> 
+          
+        }
+    </div>
+
 
       <form type='submit' onSubmit={handleSubmit}>
         <input
@@ -95,13 +106,6 @@ const CreateEventForm = (props) => {
             name="name"
             placeholder="name"
             value = {props.formState.name}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input
-            name="address"
-            placeholder="address"
-            value = {props.formState.address}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
@@ -117,13 +121,6 @@ const CreateEventForm = (props) => {
             name="date"
             placeholder="date"
             value = {props.formState.date}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="zipcode"
-            placeholder="zipcode"
-            value = {props.formState.zipcode}
             onChange={handleChange}
             className="input-feild"/>
             <br/>

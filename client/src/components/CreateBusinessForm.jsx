@@ -90,8 +90,6 @@ const CreateBusinessForm = (props) => {
         {props.businessState.businessCoordinates.location ? 
           <div>
             <p>{props.businessState.businessCoordinates.formatted_address}</p>
-            <p>{props.businessState.businessCoordinates.location.lat}</p>
-            <p>{props.businessState.businessCoordinates.location.lng}</p>
           </div>
           :
           <div></div> 
@@ -112,13 +110,6 @@ const CreateBusinessForm = (props) => {
             onChange={handleChange}
             className="input-feild"/>
             <br/>
-        <input
-            name="address"
-            placeholder="address"
-            value = {props.formState.address}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
         <textarea
             name="description"
             placeholder="description"
@@ -131,13 +122,6 @@ const CreateBusinessForm = (props) => {
             name="date"
             placeholder="date"
             value = {props.formState.date}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="zipcode"
-            placeholder="zipcode"
-            value = {props.formState.zipcode}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
