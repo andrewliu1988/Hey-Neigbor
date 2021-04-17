@@ -39,6 +39,7 @@ const CreateEventForm = (props) => {
       user_id: props.formState.user_id, 
       name: props.formState.name,  
       address:props.eventState.eventCoordinates.formatted_address,
+      image: props.formState.image,
       description:props.formState.description,
       date:props.formState.date,
       zipcode:props.eventState.eventCoordinates.address_components.zip,
@@ -106,6 +107,13 @@ const CreateEventForm = (props) => {
             name="name"
             placeholder="name"
             value = {props.formState.name}
+            onChange={handleChange}
+            className="input-feild"/>
+            <br/>
+        <input 
+            name="image"
+            placeholder="image"
+            value ={props.formState.image}
             onChange={handleChange}
             className="input-feild"/>
             <br/>

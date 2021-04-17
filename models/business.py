@@ -7,14 +7,15 @@ class Business(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    name = db.Column(db.String(255), nullable=False)
-    address = db.Column(db.String(255), nullable=False)
-    description = db.Column(db.String(255), nullable=False)
-    date = db.Column(db.String(50), nullable=False)
-    zipcode = db.Column(db.String(15), nullable=False)
-    website = db.Column(db.String(255), nullable=False)
-    longitude = db.Column(db.String(15), nullable=False)
-    latitude = db.Column(db.String(15), nullable=False)
+    name = db.Column(db.String(255), default='', nullable=False)
+    address = db.Column(db.String(255), default='', nullable=False)
+    image = db.Column(db.String(255), default='', nullable=False)
+    description = db.Column(db.String(255), default='', nullable=False)
+    date = db.Column(db.String(50), default='', nullable=False)
+    zipcode = db.Column(db.String(15), default='', nullable=False)
+    website = db.Column(db.String(255), default='', nullable=False)
+    longitude = db.Column(db.String(15), default='', nullable=False)
+    latitude = db.Column(db.String(15), default='', nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow,
@@ -22,22 +23,24 @@ class Business(db.Model):
     user = db.relationship(
         "User", backref=db.backref("user_business", lazy=True))
 
-    def __init__(self, user_id, name, address, description, date, zipcode, website, longitude, latitude):
+    def __init__(self, user_id, name, address, image, description, date, zipcode, website, longitude, latitude):
         self.user_id = user_id
-        self.name = name
-        self.address = address
-        self.description = description
-        self.date = date
-        self.zipcode = zipcode
-        self.website = website
-        self.longitude = longitude
-        self.latitude = latitude
+        self.name = name or ''
+        self.address = address or ''
+        self.image = image or ''
+        self.description = description or ''
+        self.date = date or ''
+        self.zipcode = zipcode or ''
+        self.website = website or ''
+        self.longitude = longitude or ''
+        self.latitude = latitude or ''
 
     def json(self):
         return {"id": self.id,
                 "user_id": self.user_id,
                 "name": self.name,
                 "address": self.address,
+                "image": self.image,
                 "description": self.description,
                 "date": self.date,
                 "zipcode": self.zipcode,

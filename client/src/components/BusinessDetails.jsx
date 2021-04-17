@@ -28,11 +28,10 @@ const BusinessDetails = (props) => {
       <h1>Details</h1>
       <h2> {businessDetails.name}</h2>
       <h3>Grand Opening: {businessDetails.date}</h3> 
+      <img width="500em" src={businessDetails.image} alt="business cover"/>
       <h3>{businessDetails.address} {businessDetails.zipcode} </h3>
       <a href={businessDetails.website}>{businessDetails.website}</a>
       <p>{businessDetails.description}</p>
-      <p> {businessDetails.longitude}</p>
-      <p>{businessDetails.latitude}</p>
     </div>
   )
 }

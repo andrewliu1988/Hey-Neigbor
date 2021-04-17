@@ -29,6 +29,7 @@ const UpdateBusinessForm = (props ) => {
       user_id: formUserId, 
       name: props.formState.name,  
       address:props.formState.address,
+      image: props.formState.image,
       description:props.formState.description,
       date:props.formState.date,
       zipcode:props.formState.zipcode,
@@ -67,6 +68,13 @@ const UpdateBusinessForm = (props ) => {
             onChange={handleChange}
             className="input-feild"/>
             <br/>
+        <input 
+            name="image"
+            placeholder="image"
+            value ={props.formState.image}
+            onChange={handleChange}
+            className="input-feild"/>
+            <br/>        
         <textarea
             name="description"
             placeholder="description"

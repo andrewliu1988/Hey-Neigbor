@@ -9,6 +9,7 @@ class Event(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     name = db.Column(db.String(255), default='', nullable=False)
     address = db.Column(db.String(255),  default='', nullable=False)
+    image = db.Column(db.String(255), default='', nullable=False)
     description = db.Column(db.String(255),  default='', nullable=False)
     date = db.Column(db.String(50),  default='', nullable=False)
     zipcode = db.Column(db.String(30),  default='', nullable=False)
@@ -22,10 +23,11 @@ class Event(db.Model):
                            nullable=False, onupdate=datetime.now())
     user = db.relationship("User", backref=db.backref("user_event", lazy=True))
 
-    def __init__(self, user_id,  name, address, description, date, zipcode, website, longitude, latitude, attendees):
+    def __init__(self, user_id,  name, address, image, description, date, zipcode, website, longitude, latitude, attendees):
         self.user_id = user_id
         self.name = name or ''
         self.address = address or ''
+        self.image = image or ''
         self.description = description or ''
         self.date = date or ''
         self.zipcode = zipcode or ''
@@ -39,6 +41,7 @@ class Event(db.Model):
                 "user_id": self.user_id,
                 "name": self.name,
                 "address": self.address,
+                "image": self.image,
                 "description": self.description,
                 "date": self.date,
                 "zipcode": self.zipcode,

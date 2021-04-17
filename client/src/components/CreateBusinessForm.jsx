@@ -55,6 +55,7 @@ const CreateBusinessForm = (props) => {
       user_id: props.formState.user_id, 
       name: props.formState.name,  
       address: props.businessState.businessCoordinates.formatted_address,
+      image: props.formState.image,
       description:props.formState.description,
       date:props.formState.date,
       zipcode:props.businessState.businessCoordinates.address_components.zip,
@@ -107,6 +108,13 @@ const CreateBusinessForm = (props) => {
             name="name"
             placeholder="name"
             value = {props.formState.name}
+            onChange={handleChange}
+            className="input-feild"/>
+            <br/>
+          <input 
+            name="image"
+            placeholder="image"
+            value ={props.formState.image}
             onChange={handleChange}
             className="input-feild"/>
             <br/>
