@@ -36,4 +36,6 @@ class SingleEvent(Resource):
 class ZipCodeEvent(Resource):
     def get(self, zipcode):
         events = Event.find_by_zipcode(zipcode)
+        print(events)
+        print([event.json() for event in events])
         return [event.json() for event in events]

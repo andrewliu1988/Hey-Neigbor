@@ -29,7 +29,7 @@ const Nav =(props) => {
 
   let authenticated = props.authState.authenticated
   return (
-    <div> 
+    <div className='navBar'> 
       <nav> 
         <NavLink to='/'> Business</NavLink>
         <NavLink to='/events'>Events</NavLink>

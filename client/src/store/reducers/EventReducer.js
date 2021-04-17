@@ -5,15 +5,16 @@ import {
   UPLOAD_EVENT,
   UPDATE_EVENT,
   ADDRESS_TO_COORDINATES,
-  TOGGLE_EVENT_ADDRESS
+  TOGGLE_EVENT_ADDRESS,
+  EVENT_SEARCH
 } from '../types'
 
 const iState = {
   allEvent: [],
   eventDetails: {},
-  zipcodeEvent: [],
   eventCoordinates: {},
-  toggle_event_address: false
+  toggle_event_address: false,
+  eventSearch: ''
 }
 
 const EventReducer = (state = iState, action) => {
@@ -25,13 +26,15 @@ const EventReducer = (state = iState, action) => {
     case UPLOAD_EVENT:
       return { ...state, allEvent: [...state.allEvent, action.payload] }
     case GET_EVENTS_BY_ZIPCODE:
-      return { ...state, zipcodeEvent: action.payload }
+      return { ...state, allEvent: action.payload }
     case UPDATE_EVENT:
       return { ...state }
     case ADDRESS_TO_COORDINATES:
       return { ...state, eventCoordinates: action.payload }
     case TOGGLE_EVENT_ADDRESS:
       return { ...state, toggle_event_address: action.payload }
+    case EVENT_SEARCH:
+      return { ...state, eventSearch: action.payload }
     default:
       return { ...state }
   }

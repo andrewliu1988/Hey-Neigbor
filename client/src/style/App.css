@@ -10,3 +10,29 @@
   width: 1.5em;
   height: 1.5em;
 }
+
+.navBar {
+  position: fixed;
+  top: 0;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  display: inline-flex;
+  width: 100vw;
+  margin-right: 10em;
+  margin-bottom: 1em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 4.9em;
+  font-weight: bold;
+  font-size: large;
+  margin-left: 40vw;
+  color: black;
+}
+
+a {
+  margin-right: 2em;
+  text-decoration: none;
+}

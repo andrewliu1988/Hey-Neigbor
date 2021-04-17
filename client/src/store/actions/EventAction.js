@@ -11,7 +11,8 @@ import {
   GET_EVENTS_BY_ZIPCODE,
   GET_EVENT_DETAILS,
   ADDRESS_TO_COORDINATES,
-  TOGGLE_EVENT_ADDRESS
+  TOGGLE_EVENT_ADDRESS,
+  EVENT_SEARCH
 } from '../types'
 
 export const GetAllEvent = () => async (dispatch) => {
@@ -67,4 +68,9 @@ export const AddressToCoordinates = (formData) => async (dispatch) => {
 export const ToggleEventAddress = (payload) => ({
   type: TOGGLE_EVENT_ADDRESS,
   payload: payload
+})
+
+export const EventSearchInput = (input) => ({
+  type: EVENT_SEARCH,
+  payload: input
 })

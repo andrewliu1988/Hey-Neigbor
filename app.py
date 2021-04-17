@@ -26,11 +26,11 @@ migrate = Migrate(app, db)
 
 api.add_resource(Businesses, '/businesses')
 api.add_resource(SingleBusiness, '/businesses/<int:id>')
-api.add_resource(ZipcodeBusiness, '/businesses/<string:zipcode>')
+api.add_resource(ZipcodeBusiness, '/businesseszipcode/<string:zipcode>')
 
 api.add_resource(Events, '/events')
 api.add_resource(SingleEvent, '/events/<int:id>')
-api.add_resource(ZipCodeEvent, '/events/<string:zipcode>')
+api.add_resource(ZipCodeEvent, '/eventszipcode/<string:zipcode>')
 
 
 api.add_resource(Users, '/users')
