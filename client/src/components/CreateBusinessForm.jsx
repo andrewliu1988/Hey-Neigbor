@@ -50,7 +50,7 @@ const CreateBusinessForm = (props) => {
 
 
   const handleSubmit=(e) => {
-    e.preventDefault()
+    // e.preventDefault()
     try {props.setUploadBusiness({
       user_id: props.formState.user_id, 
       name: props.formState.name,  
@@ -98,7 +98,7 @@ const CreateBusinessForm = (props) => {
         }
     </div>
 
-      <form type="submit" onSubmit={handleSubmit}>
+      <form>
           <input
           type='hidden'
           name='user_id'
@@ -140,7 +140,7 @@ const CreateBusinessForm = (props) => {
             onChange={handleChange}
             className="input-feild"/>
             <br/>
-          <button>Add a Business!</button>
+          <button type="button" onClick={handleSubmit}>Add a Business!</button>
       </form>
     </div>
   )

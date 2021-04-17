@@ -11,7 +11,8 @@ import {
   GET_BUSINESSES_BY_ZIPCODE,
   GET_BUSINESS_DETIALS,
   ADDRESS_TO_COORDINATES,
-  TOGGLE_BUSINESS_ADDRESS
+  TOGGLE_BUSINESS_ADDRESS,
+  SEARCH
 } from '../types'
 
 export const GetAllBusiness = () => async (dispatch) => {
@@ -67,4 +68,9 @@ export const AddressToCoordinates = (formData) => async (dispatch) => {
 export const ToggleBusinessAddress = (payload) => ({
   type: TOGGLE_BUSINESS_ADDRESS,
   payload: payload
+})
+
+export const BusinessSearchInput = (input) => ({
+  type: SEARCH,
+  payload: input
 })

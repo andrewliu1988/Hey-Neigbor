@@ -20,7 +20,7 @@ export const __GetBusinessDetails = async (id) => {
 
 export const __GetBusinessByZipcode = async (zipcode) => {
   try {
-    const res = await Client.get(`businesses/${zipcode}`)
+    const res = await Client.get(`/businesseszipcode/${zipcode}`)
     console.log(res)
     return res.data
   } catch (error) {
