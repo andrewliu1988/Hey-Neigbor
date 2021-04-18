@@ -27,13 +27,12 @@ const EventDetails = (props) => {
     <div className='event-details'>
       <h1> Details </h1> 
       <h2> {eventDetails.name}</h2>
-      <h3>Grand Opening: {eventDetails.date}</h3> 
-      <h3>{eventDetails.address} {eventDetails.zipcode} </h3>
+      <h3> Happening: {eventDetails.date}</h3> 
+      <img width="500em" src={eventDetails.image} alt="event cover"/>
+      <h3>{eventDetails.address}</h3>
       <a href={eventDetails.website}>{eventDetails.website}</a>
       <p>{eventDetails.description}</p>
-      <p>{eventDetails.attendees}</p>
-      <p>{eventDetails.longitude}</p>
-      <p>{eventDetails.latitude}</p>      
+      <p>{eventDetails.attendees}</p>     
     </div>
   )
 }

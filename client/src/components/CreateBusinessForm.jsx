@@ -154,6 +154,7 @@ const CreateBusinessForm = (props) => {
                 onChange={handleChange}
                 className="input-field"/>
                 <br/>
+                <br/>
                 <button type="button" onClick={handleSubmit}>Add a Business!</button>
             </form>
         </div>

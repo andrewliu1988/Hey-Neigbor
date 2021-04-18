@@ -48,7 +48,6 @@ const CreateEventForm = (props) => {
 			attendees: props.formState.attendees
 		})
 		props.setId(id) 
-		props.history.push('/user_profile/:id')
 	}
 
 	const handleInput =(e) => {
@@ -93,7 +92,10 @@ const CreateEventForm = (props) => {
 	<div className="form-input">
 		{props.eventState.eventCoordinates.location ? 
 			<div>
+				<p>Please Confirm Address. Run address again to RESET!!!</p> 
 				<p>{props.eventState.eventCoordinates.formatted_address}</p>
+				<p>Latitiude: {props.eventState.eventCoordinates.location.lat} </p>
+        <p>Longitude: {props.eventState.eventCoordinates.location.lng}</p>
 			</div>
 			:
 			<div></div> 
