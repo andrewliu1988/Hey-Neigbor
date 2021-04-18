@@ -71,7 +71,7 @@ const CreateEventForm = (props) => {
 
 	return (
 	<div> 
-		<h1>Create Event Form</h1>
+		<h1 className="h1-input">Create Event Form</h1>
 
 	<div>
 		
@@ -83,7 +83,7 @@ const CreateEventForm = (props) => {
 			placeholder="ADDRESS, ZIPCODE"
 			name="location"
 			onChange={handleInput}
-		/>
+			/>
 			<br/>
 			<br/>
 			<button onClick={handleConvert}>Add Coordinates</button>
@@ -107,7 +107,7 @@ const CreateEventForm = (props) => {
     		<input
             type='hidden'
             name='user_id'
-            value = {props.formState.user_id}s
+            value = {props.formState.user_id}
         />
 				<h3>NAME:	 </h3>  	 
 					<input

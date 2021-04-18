@@ -71,10 +71,11 @@ const CreateBusinessForm = (props) => {
 
     return (
         <div> 
-        <h1>Create Business Form</h1>
+        <h1 className="h1-input">Create Business Form</h1>
 
         <div>
-            <form>
+            <form className="form-input">
+            <h3>Please Enter Full Address:</h3> 
             <input
             text="text"
             className="convertAddressField"
@@ -82,6 +83,8 @@ const CreateBusinessForm = (props) => {
             name="location"
             onChange={handleInput}
             />
+            <br/>
+			<br/>
             <button onClick={handleConvert}>Add Coordinates</button>
             </form>
         </div>
@@ -97,48 +100,56 @@ const CreateBusinessForm = (props) => {
             }
         </div>
 
-            <form>
+            <form className="form-input">
                 <input
-                    type='hidden'
-                    name='user_id'
-                    value = {props.formState.user_id}
-                    />
+                type='hidden'
+                name='user_id'
+                value = {props.formState.user_id}
+                />
+				<h3>NAME:</h3>  	 
                 <input
-                    name="name"
-                    placeholder="name"
-                    value = {props.formState.name}
-                    onChange={handleChange}
-                    className="input-feild"/>
-                    <br/>
+                name="name"
+                placeholder="NAME"
+                value = {props.formState.name}
+                onChange={handleChange}
+                className="input-field"/>
+				
+				<h3>UPLOAD IMAGE: </h3>
                 <input 
-                    name="image"
-                    placeholder="image"
-                    value ={props.formState.image}
-                    onChange={handleChange}
-                    className="input-feild"/>
-                    <br/>
+                name="image"
+                placeholder="IMAGE"
+                value ={props.formState.image}
+                onChange={handleChange}
+                className="input-field"/>
+                <br/>
+
+				<h3>DESCRIPTION:</h3>
                 <textarea
-                    name="description"
-                    placeholder="description"
-                    value = {props.formState.description}
-                    onChange={handleChange}
-                    className="input-feild"/>
-                    <br/>
-                <input
-                    type ="date"
-                    name="date"
-                    placeholder="date"
-                    value = {props.formState.date}
-                    onChange={handleChange}
-                    className="input-feild"/>
-                    <br/>
+                name="description"
+                placeholder="DESCRIPTION"
+                value = {props.formState.description}
+                onChange={handleChange}
+                className="textarea"/>
+
+                <br/>
+				<h3>DATE:</h3>	
                 <input 
-                    name="website"
-                    placeholder="website"
-                    value = {props.formState.website}
-                    onChange={handleChange}
-                    className="input-feild"/>
-                    <br/>
+                type="date"
+                name="date"
+                placeholder="DATE"
+                value = {props.formState.date}
+                onChange={handleChange}
+                className="input-field"/> 
+
+                <br/>
+                <h3>WEBSITE (OPTIONAL):</h3>		
+                <input 
+                name="website"
+                placeholder="WEBSITE"
+                value = {props.formState.website}
+                onChange={handleChange}
+                className="input-field"/>
+                <br/>
                 <button type="button" onClick={handleSubmit}>Add a Business!</button>
             </form>
         </div>
