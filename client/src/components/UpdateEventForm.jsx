@@ -52,84 +52,86 @@ const UpdateEventForm = (props) => {
 
   return (
     <div>
-      <h1>Update Event</h1>
-      <form >
+      <h1 className='h1-input '>Update Event</h1>
+      <form className="form-input">
           <input
           type='hidden'
           name='user_id'
           value = {formUserId}
           />
+        <h3>NAME:</h3>
         <input
             name="name"
             placeholder={props.eventState.eventDetails.name}
             value = {props.formState.name}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>ADDRESS:</h3>    
         <input
             name="address"
             placeholder={props.eventState.eventDetails.address}
             value = {props.formState.address}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>IMAGE:</h3>    
         <input 
             name="image"
             placeholder="image"
             value ={props.formState.image}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>DESCRIPTION:</h3>        
         <textarea
             name="description"
             placeholder={props.eventState.eventDetails.description}
             value = {props.formState.description}
             onChange={handleChange}
-            className="input-feild"/>
+            className="textarea"/>
             <br/>
+            <br/>
+        <h3>DATE:</h3>          
         <input 
             type= "date"
             name="date"
             placeholder={props.eventState.eventDetails.date}
             value = {props.formState.date}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>ZIPCODE:</h3>    
         <input 
             name="zipcode"
             placeholder={props.eventState.eventDetails.zipcode}
             value = {props.formState.zipcode}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>WEBSITE:</h3>    
         <input 
             name="website"
             placeholder={props.eventState.eventDetails.website}
             value = {props.formState.website}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+            <br/>
+        <h3>ATTENDEES:</h3>  
           <input 
             name="attendees"
             placeholder={props.eventState.eventDetails.attendees}
             value = {props.formState.attendees}
             onChange={handleChange}
-            className="input-feild"/>
-          <br/>  
-        <input
-            type="hidden"
-            name="longitude"
-            placeholder={props.eventState.eventDetails.longitude}
-            value = {props.eventState.eventDetails.longitude}
-            className="input-feild"/>
-            <br/>
-        <input 
-            type="hidden"
-            name="latitude"
-            placeholder={props.eventState.eventDetails.latitude}
-            value = {props.eventState.eventDetails.latitude}
-            className="input-feild"/>
-            <br/>
+            className="input-field"/>
+          <br/>
+          <br/>
           <button type="button" onClick={handleSubmit}>Update</button>
       </form>
 
