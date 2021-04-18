@@ -8,7 +8,7 @@ const BusinessCard = (props) => {
       <h4>{name}</h4>
       <p>{date}</p>
       <p>{address}</p>
-      <p>{zipcode} </p> 
+      {/* <p>{zipcode} </p>  */}
       <p>{description}</p> 
     </div> 
     )

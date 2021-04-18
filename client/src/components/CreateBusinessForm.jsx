@@ -91,8 +91,11 @@ const CreateBusinessForm = (props) => {
 
         <div>
             {props.businessState.businessCoordinates.location ? 
-            <div>
-                <p>{props.businessState.businessCoordinates.formatted_address}</p>
+            <div className="form-input">
+                <p>Please Confirm Address. Run address again to RESET!!!</p> 
+                <p>Address: {props.businessState.businessCoordinates.formatted_address}</p>
+                <p>Latitiude: {props.businessState.businessCoordinates.location.lat} </p>
+                <p>Longitude: {props.businessState.businessCoordinates.location.lng}</p>
             </div>
             :
             <div></div> 
@@ -125,6 +128,7 @@ const CreateBusinessForm = (props) => {
 
 				<h3>DESCRIPTION:</h3>
                 <textarea
+                maxLength="255"
                 name="description"
                 placeholder="DESCRIPTION"
                 value = {props.formState.description}

@@ -109,7 +109,7 @@ const CreateEventForm = (props) => {
             name='user_id'
             value = {props.formState.user_id}
         />
-				<h3>NAME:	 </h3>  	 
+				<h3>NAME:</h3>  	 
 					<input
 							name="name"
 							placeholder="NAME"
@@ -117,7 +117,7 @@ const CreateEventForm = (props) => {
 							onChange={handleChange}
 							className="input-field"/>
 				
-				<h3>UPLOAD IMAGE: </h3>
+				<h3>UPLOAD IMAGE:</h3>
 					<input 
 							name="image"
 							placeholder="IMAGE"
@@ -127,6 +127,7 @@ const CreateEventForm = (props) => {
         <br/>
 				<h3>DESCRIPTION:</h3>
 					<textarea
+					 		maxLength="255"
 							name="description"
 							placeholder="DESCRIPTION"
 							value = {props.formState.description}

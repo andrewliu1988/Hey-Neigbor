@@ -33,7 +33,8 @@ const FormReducer = (state = iState, action) => {
         website: '',
         longitude: '',
         latitude: '',
-        attendees: ''
+        attendees: '',
+        image: ''
       }
     default:
       return { ...state }
