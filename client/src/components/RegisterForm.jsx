@@ -32,38 +32,55 @@ const RegisterForm = (props) => {
 
   return (
     <div>
-      <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
+      <h1 className="h1-input">Sign Up</h1>
+        <form className="form-input">
+          <h3>USERNAME:</h3>
+          <br/>
           <input
           name="username"
-          placeholder="username"
+          placeholder="USERNAME"
           value={props.authState.username}
           onChange={handleChange}
+          className="input-field"
           required
           />
+          <br/>
+          <br/>
+          <h3>EMAIL:</h3>
           <input
           name="email"
-          placeholder="email"
+          placeholder="EMAIL"
           value={props.authState.email}
           onChange={handleChange}
           required
+          className="input-field"
           />
+          <br/>
+          <br/>
+          <h3>PASSWORD:</h3>
           <input
           type="password"
           name="password_digest"
-          placeholder="password"
+          placeholder="PASSWORD"
           value={props.authState.password_digest}
           onChange={handleChange}
+          className="input-field"
           required
           />
+          <br/>
+          <br/>
+          <h3>ZIPCODE:</h3>
           <input
           type="text"
           name="zipcode"
-          placeholder="zipcode"
+          placeholder="ZIPCODE"
           value={props.authState.zipcode}
           onChange={handleChange}
+          className="input-field"
           />
-          <button> Register</button>
+          <br/>
+          <br/>
+          <button type="button" onClick={handleSubmit}> Register</button>
         </form>
     </div>
   )
