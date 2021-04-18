@@ -36,20 +36,26 @@ const UserProfile = (props) => {
 
   return (
     <div>
-      <h1>User Profile</h1>
-      <button
-        className="create-btn"
-        onClick={() => props.history.push(`/create_business/${id}`)}
-      >
-        CREATE BUSINESS
-        <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-      </button>
-      <button
-        className="create-btn"
-        onClick={() => props.history.push(`/create_event/${id}`)}
-      >
-        CREATE EVENT <i className="fa fa-plus-square-o" aria-hidden="true"></i>
-      </button>
+      <h1 className="user-profile-title">User Dashboard</h1>
+      <h3 className="h3-input">
+        To get started, create business or event to add to dashboard.
+      </h3>
+      <div className="create-btn-container">
+        <button
+          className="create-btn"
+          onClick={() => props.history.push(`/create_business/${id}`)}
+        >
+          CREATE BUSINESS
+          <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+        </button>
+        <button
+          className="create-btn"
+          onClick={() => props.history.push(`/create_event/${id}`)}
+        >
+          CREATE EVENT{' '}
+          <i className="fa fa-plus-square-o" aria-hidden="true"></i>
+        </button>
+      </div>
       <div className="business_event_container">
         <div className="user-business">
           {userBusiness ? (

@@ -3,12 +3,12 @@ import React from 'react'
 const EventCard =(props) => {
   const {name, address, date, description, attendees} = props.event
   return (
-    <div> 
+    <div className="card-details"> 
       <h4>{name} </h4>
-      <p>{address}</p>
+      <p>Date: {date}</p>
+      <p>Address: {address}</p>
       <p>{description}</p>
-      <p>{date}</p>
-      <p>{attendees}</p>
+      <p>Attendees: {attendees}</p>
     </div>
   )
 }
