@@ -5,8 +5,14 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0.5em, 0.5em, 0.5em, 0.5em;
+  border: 0.4em solid white;
+  align-content: center;
+  background-color: white;
+  /* border-radius: %; */
+  border: 0.4em solid #4f6ec4;
+
   /* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
@@ -14,6 +20,8 @@
 
 .business-card {
   margin-top: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
   border: 0.4em solid white;
   display: flex;
   flex-direction: column;
@@ -24,11 +32,13 @@
   padding: 1em 1em 1em 1em;
   background-color: #4f6ec4;
   color: white;
-  border-radius: 10%;
+  border-radius: 5%;
   font-weight: bold;
 }
 
 .event-card {
+  margin-left: 2em;
+  margin-right: 2em;
   margin-top: 1em;
   border: 0.4em solid white;
   display: flex;
@@ -40,7 +50,7 @@
   padding: 1em 1em 1em 1em;
   background-color: #4f6ec4;
   color: white;
-  border-radius: 10%;
+  border-radius: 5%;
   font-weight: bold;
 }
 
@@ -65,15 +75,8 @@
   background-color: transparent;
   border: 1px solid transparent;
   cursor: pointer;
-}
-
-/* .delete-btn::after {
-  content: '\f014';
-  font-family: FontAwesome;
-  color: rgba(31, 38, 135, 0.6);
-  font-size: 20px;
   transition: font-size 150ms ease-in-out;
-} */
+}
 
 .delete-btn:hover,
 .details-btn:hover,
@@ -92,4 +95,19 @@
   justify-content: space-evenly;
   cursor: pointer;
   padding: 4px 2px 4px 2px;
+}
+
+.create-btn {
+  width: 12em;
+  height: 2em;
+  font-size: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  padding: 4px 2px 4px 2px;
+}
+
+.fa-plus-square-o {
+  font-size: 1.2em;
 }

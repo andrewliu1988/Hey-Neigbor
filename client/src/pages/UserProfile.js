@@ -37,11 +37,18 @@ const UserProfile = (props) => {
   return (
     <div>
       <h1>User Profile</h1>
-      <button onClick={() => props.history.push(`/create_business/${id}`)}>
-        Create Business
+      <button
+        className="create-btn"
+        onClick={() => props.history.push(`/create_business/${id}`)}
+      >
+        CREATE BUSINESS
+        <i className="fa fa-plus-square-o" aria-hidden="true"></i>
       </button>
-      <button onClick={() => props.history.push(`/create_event/${id}`)}>
-        Create Event
+      <button
+        className="create-btn"
+        onClick={() => props.history.push(`/create_event/${id}`)}
+      >
+        CREATE EVENT <i className="fa fa-plus-square-o" aria-hidden="true"></i>
       </button>
       <div className="business_event_container">
         <div className="user-business">
