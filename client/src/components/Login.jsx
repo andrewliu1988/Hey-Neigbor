@@ -39,22 +39,31 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1> Sign In</h1>
-      <form > 
+      <h1 className="h1-input"> Sign In</h1>
+      <form className="form-input">
+        <h3>User Name:</h3>
         <input
         name ="username"
         placeholder="username"
         value={props.authState.username}
         onChange={handleChange}
         required
+        className="input-field"
         />
+        <br/>
+        <br/>
+        <h3>Password:</h3>
         <input
+        type="password"
         name='password_digest'
         placeholder="password"
         value={props.authState.password_digest}
         onChange={handleChange}
         required
+        className='input-field'
         />
+        <br/>
+        <br/>
         <button type='button'onClick= {handleSubmit}>Login</button>
       </form>
     </div>
