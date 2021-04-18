@@ -64,7 +64,10 @@ const Login = (props) => {
         />
         <br/>
         <br/>
-        <button type='button'onClick= {handleSubmit}>Login</button>
+        <br/>
+        <button 
+        className="signin-btn"
+        type='button'onClick= {handleSubmit}>Login <i className="fa fa-sign-in" aria-hidden="true"></i> </button>
       </form>
     </div>
   )

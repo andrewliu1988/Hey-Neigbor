@@ -61,11 +61,7 @@
   width: 1.5em;
   font-size: 1.2em;
   color: white;
-  /* background-color: white; */
   border-radius: 50%;
-  /* position: absolute; */
-  /* bottom: 20px;
-  left: 0; */
   background-color: transparent;
   border: 1px solid transparent;
   cursor: pointer;
@@ -84,4 +80,16 @@
 .edit-btn:hover {
   font-size: 2em;
   color: white;
+}
+
+.signin-btn,
+.register-btn {
+  width: 8em;
+  height: 2em;
+  font-size: 1em;
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  padding: 4px 2px 4px 2px;
 }

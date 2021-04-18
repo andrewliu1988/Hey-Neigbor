@@ -80,7 +80,11 @@ const RegisterForm = (props) => {
           />
           <br/>
           <br/>
-          <button type="button" onClick={handleSubmit}> Register</button>
+          <br/>
+        
+          <button 
+          className="register-btn"
+          type="button" onClick={handleSubmit}> Register    <i className="fa fa-user-plus" aria-hidden="true"></i></button>
         </form>
     </div>
   )
