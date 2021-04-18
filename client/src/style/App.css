@@ -3,10 +3,13 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: auto;
-  gap: 1em 1em;
+  gap: 5em 5em;
   padding-left: 10em;
   padding-right: 10em;
-  /* margin-top: 150em; */
+  margin-top: 5em;
+  background-color: #4f6ec4;
+  border: 1px solid #4f6ec4;
+  height: 100vh;
 }
 
 .map-icon {

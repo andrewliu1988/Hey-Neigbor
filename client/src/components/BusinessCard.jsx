@@ -4,10 +4,10 @@ import '../style/UserProfile.css'
 const BusinessCard = (props) => {
   const {name, date, address, description} = props.business
   return (
-    <div > 
+    <div className="card-details"> 
       <h4>{name}</h4>
-      <p>{date}</p>
-      <p>{address}</p>
+      <p> Date: {date}</p>
+      <p>Address: {address}</p>
       <p>{description}</p> 
     </div> 
     )

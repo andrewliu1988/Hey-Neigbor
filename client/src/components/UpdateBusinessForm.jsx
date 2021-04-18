@@ -45,77 +45,71 @@ const UpdateBusinessForm = (props ) => {
 
   return (
     <div> 
-      <h1> Update Form</h1>
-      <form type="submit" onSubmit={handleSubmit}>
+      <h1 className="h1-input"> Update Form</h1>
+      <form className="form-input">
           <input
           type='hidden'
           name='user_id'
           value = {formUserId}
           />
+        <h3>NAME:</h3>
         <input
             name="name"
             placeholder="name"
             value = {props.formState.name}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+        <h3>ADDRESS:</h3>
         <input
             name="address"
             placeholder="address"
             value = {props.formState.address}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+        <h3>IMAGE:</h3>
         <input 
             name="image"
             placeholder="image"
             value ={props.formState.image}
             onChange={handleChange}
-            className="input-feild"/>
-            <br/>        
+            className="input-field"/>
+            <br/>
+        <h3>DESCRIPTION:</h3>        
         <textarea
             name="description"
             placeholder="description"
             value = {props.formState.description}
             onChange={handleChange}
-            className="input-feild"/>
+            className="textarea"/>
             <br/>
+        <h3>DATE:</h3>
         <input 
             name="date"
             placeholder="date"
             value = {props.formState.date}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+        <h3>ZIPCODE:</h3>
         <input 
             name="zipcode"
             placeholder="zipcode"
             value = {props.formState.zipcode}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
+        <h3>WEBSITE</h3>
         <input 
             name="website"
             placeholder="website"
             value = {props.formState.website}
             onChange={handleChange}
-            className="input-feild"/>
+            className="input-field"/>
             <br/>
-        <input 
-            name="longitude"
-            placeholder="longitude"
-            value = {props.formState.longitude}
-            onChange={handleChange}
-            className="input-feild"/>
             <br/>
-        <input 
-            name="latitude"
-            placeholder="latitude"
-            value = {props.formState.latitude}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-          <button>Update</button>
+          <button type="button" onClick={handleSubmit}>Update</button>
       </form>
     </div>
   )

@@ -1,31 +1,87 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+
 .user-business,
 .user-event {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0.5em, 0.5em, 0.5em, 0.5em;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
 }
 
 .business-card {
-  border: 1px solid black;
+  margin-top: 1em;
+  border: 0.4em solid white;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
   margin-bottom: 1em;
   width: 30em;
-  height: 16em;
+  height: 20em;
+  padding: 1em 1em 1em 1em;
+  background-color: #4f6ec4;
+  color: white;
+  border-radius: 10%;
+  font-weight: bold;
 }
 
 .event-card {
-  border: 1px solid black;
+  margin-top: 1em;
+  border: 0.4em solid white;
   display: flex;
   flex-direction: column;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
+  text-align: left;
   margin-bottom: 1em;
   width: 30em;
-  height: 16em;
+  height: 20em;
+  padding: 1em 1em 1em 1em;
+  background-color: #4f6ec4;
+  color: white;
+  border-radius: 10%;
+  font-weight: bold;
+}
+
+.card-details {
+  padding: 1em, 1em, 1em, 1em;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-content: right;
+}
+
+.delete-btn,
+.details-btn,
+.edit-btn {
+  margin-top: 1em;
+  width: 1.5em;
+  font-size: 1.2em;
+  color: white;
+  /* background-color: white; */
+  border-radius: 50%;
+  /* position: absolute; */
+  /* bottom: 20px;
+  left: 0; */
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+/* .delete-btn::after {
+  content: '\f014';
+  font-family: FontAwesome;
+  color: rgba(31, 38, 135, 0.6);
+  font-size: 20px;
+  transition: font-size 150ms ease-in-out;
+} */
+
+.delete-btn:hover,
+.details-btn:hover,
+.edit-btn:hover {
+  font-size: 2em;
+  color: white;
 }

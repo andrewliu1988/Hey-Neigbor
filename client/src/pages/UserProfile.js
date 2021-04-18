@@ -49,25 +49,32 @@ const UserProfile = (props) => {
             userBusiness.map((business, i) => (
               <div key={i} className="business-card">
                 <BusinessCard business={business} />
-                <button onClick={() => props.deleteBusiness(business.id)}>
-                  Delete
-                </button>
-                <button
-                  onClick={() =>
-                    props.history.push(`/business_details/${business.id}`)
-                  }
-                >
-                  View Details
-                </button>
-                <button
-                  onClick={(id) =>
-                    props.history.push(
-                      `/update_business/${business.id}/${business.user_id}`
-                    )
-                  }
-                >
-                  Update Business
-                </button>
+                <div className="button-containter">
+                  <button
+                    className="delete-btn"
+                    onClick={() => props.deleteBusiness(business.id)}
+                  >
+                    <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    className="details-btn"
+                    onClick={() =>
+                      props.history.push(`/business_details/${business.id}`)
+                    }
+                  >
+                    <i className="fa fa-info" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    className="edit-btn"
+                    onClick={(id) =>
+                      props.history.push(
+                        `/update_business/${business.id}/${business.user_id}`
+                      )
+                    }
+                  >
+                    <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  </button>
+                </div>
               </div>
             ))
           ) : (
@@ -80,25 +87,32 @@ const UserProfile = (props) => {
             userEvent.map((event, i) => (
               <div key={i} className="event-card">
                 <EventCard event={event} />
-                <button onClick={() => props.deleteEvent(event.id)}>
-                  Delete
-                </button>
-                <button
-                  onClick={(id) =>
-                    props.history.push(`/event_details/${event.id}`)
-                  }
-                >
-                  View Details
-                </button>
-                <button
-                  onClick={(id) =>
-                    props.history.push(
-                      `/update_event/${event.id}/${event.user_id}`
-                    )
-                  }
-                >
-                  Update Event
-                </button>
+                <div className="button-containter">
+                  <button
+                    className="delete-btn"
+                    onClick={() => props.deleteEvent(event.id)}
+                  >
+                    <i className="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    className="details-btn"
+                    onClick={(id) =>
+                      props.history.push(`/event_details/${event.id}`)
+                    }
+                  >
+                    <i className="fa fa-info" aria-hidden="true"></i>
+                  </button>
+                  <button
+                    className="edit-btn"
+                    onClick={(id) =>
+                      props.history.push(
+                        `/update_event/${event.id}/${event.user_id}`
+                      )
+                    }
+                  >
+                    <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  </button>
+                </div>
               </div>
             ))
           ) : (
