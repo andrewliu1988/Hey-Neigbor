@@ -17,9 +17,10 @@ const mapDispatchToProps = (dispatch) => {
 const Homepage = (props) => {
   return (
     <div>
-      <h2>Homepage</h2>
       <BusinessSearch />
-      <BusinessMap />
+      <div className="map-container">
+        <BusinessMap />
+      </div>
     </div>
   )
 }

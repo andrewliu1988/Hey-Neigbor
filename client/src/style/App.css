@@ -4,6 +4,9 @@
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   margin: auto;
   gap: 1em 1em;
+  padding-left: 10em;
+  padding-right: 10em;
+  /* margin-top: 150em; */
 }
 
 .map-icon {
@@ -12,23 +15,22 @@
 }
 
 .navBar {
-  position: fixed;
+  display: flex;
+  /* position: fixed; */
   top: 0;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  display: inline-flex;
-  width: 100vw;
-  margin-right: 10em;
-  margin-bottom: 1em;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 2em;
 }
 
-nav {
+.links {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
+  width: 100vw;
   height: 4.9em;
   font-weight: bold;
   font-size: large;
-  margin-left: 40vw;
   color: black;
 }
 

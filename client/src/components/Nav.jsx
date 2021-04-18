@@ -19,8 +19,7 @@ const mapDispatchToProps=(dispatch) => {
 }
 
 const Nav =(props) => {
-
-
+  
   const logOut = () => {
     localStorage.clear()
     props.toggleAuthenticated(false)
@@ -30,7 +29,8 @@ const Nav =(props) => {
   let authenticated = props.authState.authenticated
   return (
     <div className='navBar'> 
-      <nav> 
+      <div>Hey Neighor!!!</div>
+      <nav className="links"> 
         <NavLink to='/'> Business</NavLink>
         <NavLink to='/events'>Events</NavLink>
         {authenticated ?<NavLink to='/user_profile/:id'> User Profile</NavLink>:

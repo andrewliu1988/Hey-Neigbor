@@ -1,3 +1,5 @@
+import '../style/UserProfile.css'
+
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import {
@@ -45,12 +47,10 @@ const UserProfile = (props) => {
         <div className="user-business">
           {userBusiness ? (
             userBusiness.map((business, i) => (
-              <div key={i}>
+              <div key={i} className="business-card">
                 <BusinessCard business={business} />
                 <button onClick={() => props.deleteBusiness(business.id)}>
-                  <i class="fa fa-trash-o" aria-hidden="true">
-                    Delete
-                  </i>
+                  Delete
                 </button>
                 <button
                   onClick={() =>
@@ -78,7 +78,7 @@ const UserProfile = (props) => {
         <div className="user-event">
           {userEvent ? (
             userEvent.map((event, i) => (
-              <div key={i}>
+              <div key={i} className="event-card">
                 <EventCard event={event} />
                 <button onClick={() => props.deleteEvent(event.id)}>
                   Delete

@@ -36,7 +36,6 @@ function App(props) {
   return (
     <div>
       <Nav />
-      <h1>Hey Neighbor!!!</h1>
 
       <main>
         <Switch>

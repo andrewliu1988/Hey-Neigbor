@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {UpdateFormField, UploadEvent, SetUserId, ConverterInput} from '../store/actions/UserAction'
 import {AddressToCoordinates, ToggleEventAddress} from '../store/actions/EventAction'
+import '../style/Form.css'
 
 const mapStateToProps =({formState, eventState}) => {
 	return{formState, eventState}
@@ -73,22 +74,26 @@ const CreateEventForm = (props) => {
 		<h1>Create Event Form</h1>
 
 	<div>
-		<form>
+		
+		<form className="form-input">
+			<h3>Please Enter Full Address:</h3> 
 		<input
 			text="text"
 			className="convertAddressField"
-			placeholder="address, zipcode, or location"
+			placeholder="ADDRESS, ZIPCODE"
 			name="location"
 			onChange={handleInput}
-			/>
+		/>
+			<br/>
+			<br/>
 			<button onClick={handleConvert}>Add Coordinates</button>
 		</form>
 	</div>
 
-	<div>
+	<div className="form-input">
 		{props.eventState.eventCoordinates.location ? 
 			<div>
-			<p>{props.eventState.eventCoordinates.formatted_address}</p>
+				<p>{props.eventState.eventCoordinates.formatted_address}</p>
 			</div>
 			:
 			<div></div> 
@@ -97,57 +102,69 @@ const CreateEventForm = (props) => {
 	</div>
 
 
-    <form >
-        <input
+    <form className="form-input" >
+
+    		<input
             type='hidden'
             name='user_id'
-            value = {props.formState.user_id}
+            value = {props.formState.user_id}s
         />
-        <input
-            name="name"
-            placeholder="name"
-            value = {props.formState.name}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="image"
-            placeholder="image"
-            value ={props.formState.image}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <textarea
-            name="description"
-            placeholder="description"
-            value = {props.formState.description}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            type="date"
-            name="date"
-            placeholder="date"
-            value = {props.formState.date}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>
-        <input 
-            name="website"
-            placeholder="website"
-            value = {props.formState.website}
-            onChange={handleChange}
-            className="input-feild"/>
-            <br/>   
-        <input 
-            name="attendees"
-            placeholder="attendees"
-            value = {props.formState.attendees}
-            onChange={handleChange}
-            className="input-feild"/>
-			<br/>
+				<h3>NAME:	 </h3>  	 
+					<input
+							name="name"
+							placeholder="NAME"
+							value = {props.formState.name}
+							onChange={handleChange}
+							className="input-field"/>
+				
+				<h3>UPLOAD IMAGE: </h3>
+					<input 
+							name="image"
+							placeholder="IMAGE"
+							value ={props.formState.image}
+							onChange={handleChange}
+							className="input-field"/>
+        <br/>
+				<h3>DESCRIPTION:</h3>
+					<textarea
+							name="description"
+							placeholder="DESCRIPTION"
+							value = {props.formState.description}
+							onChange={handleChange}
+							className="textarea"/>
 
-			<button type='button' onClick={handleSubmit}>Add a Event!</button>
+            <br/>
+				<h3>DATE:</h3>	
+					<input 
+						type="date"
+						name="date"
+						placeholder="DATE"
+						value = {props.formState.date}
+						onChange={handleChange}
+						className="input-field"/> 
+
+        <br/>
+				<h3>WEBSITE (OPTIONAL):</h3>		
+					<input 
+							name="website"
+							placeholder="WEBSITE"
+							value = {props.formState.website}
+							onChange={handleChange}
+							className="input-field"/>
+
+      	<br/>   
+				<h3>ATTENDEES:</h3>	
+					<input 
+							name="attendees"
+							placeholder="ATTENDEES"
+							value = {props.formState.attendees}
+							onChange={handleChange}
+							className="input-field"/>
+	
+				<br/>
+				<br/>
+
+				<button type='button' onClick={handleSubmit}>Add a Event!</button>
 		</form>
 	</div>
 	)

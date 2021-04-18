@@ -34,8 +34,6 @@ const UpdateBusinessForm = (props ) => {
       date:props.formState.date,
       zipcode:props.formState.zipcode,
       website: props.formState.website,
-      longitude:props.formState.longitude,
-      latitude: props.formState.latitude
     }
     try {
        props.setUpdateBusiness(id, formData)
