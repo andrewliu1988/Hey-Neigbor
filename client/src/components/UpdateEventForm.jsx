@@ -30,7 +30,6 @@ const UpdateEventForm = (props) => {
   }
 
   const handleSubmit = async (e) => {
-
     const formData = {
     user_id: formUserId, 
     name: props.formState.name,  
@@ -54,7 +53,7 @@ const UpdateEventForm = (props) => {
   return (
     <div>
       <h1>Update Event</h1>
-      <form type="submit" onSubmit={handleSubmit}>
+      <form >
           <input
           type='hidden'
           name='user_id'
@@ -131,7 +130,7 @@ const UpdateEventForm = (props) => {
             value = {props.eventState.eventDetails.latitude}
             className="input-feild"/>
             <br/>
-          <button>Update</button>
+          <button type="button" onClick={handleSubmit}>Update</button>
       </form>
 
     </div>

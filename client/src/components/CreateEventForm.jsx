@@ -45,7 +45,9 @@ const CreateEventForm = (props) => {
 			longitude: props.eventState.eventCoordinates.location.lng,
 			latitude: props.eventState.eventCoordinates.location.lat,
 			attendees: props.formState.attendees
-		})  
+		})
+		props.setId(id) 
+		props.history.push('/user_profile/:id')
 	}
 
 	const handleInput =(e) => {
@@ -95,7 +97,7 @@ const CreateEventForm = (props) => {
 	</div>
 
 
-    <form type='submit' onSubmit={handleSubmit}>
+    <form >
         <input
             type='hidden'
             name='user_id'
@@ -145,7 +147,7 @@ const CreateEventForm = (props) => {
             className="input-feild"/>
 			<br/>
 
-			<button>Add a Event!</button>
+			<button type='button' onClick={handleSubmit}>Add a Event!</button>
 		</form>
 	</div>
 	)

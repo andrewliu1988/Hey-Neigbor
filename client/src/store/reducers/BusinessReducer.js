@@ -26,7 +26,6 @@ const BusinessReducer = (state = iState, action) => {
     case UPLOAD_BUSINESS:
       return { ...state, allBusiness: [...state.allBusiness, action.payload] }
     case UPDATE_BUSINESS:
-      console.log(action.payload)
       return { ...state }
     case GET_BUSINESSES_BY_ZIPCODE:
       return { ...state, allBusiness: action.payload }

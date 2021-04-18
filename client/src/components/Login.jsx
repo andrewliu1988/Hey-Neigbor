@@ -40,7 +40,7 @@ const Login = (props) => {
   return (
     <div>
       <h1> Sign In</h1>
-      <form onSubmit = {handleSubmit}> 
+      <form > 
         <input
         name ="username"
         placeholder="username"
@@ -55,7 +55,7 @@ const Login = (props) => {
         onChange={handleChange}
         required
         />
-        <button>Login</button>
+        <button type='button'onClick= {handleSubmit}>Login</button>
       </form>
     </div>
   )

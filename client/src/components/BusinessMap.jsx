@@ -54,7 +54,7 @@ const BusinessMap = (props) => {
 							<Marker
 							latitude={parseFloat(business.latitude)} longitude={parseFloat(business.longitude)}
 							>
-								<img className="map-icon" src='https://i.imgur.com/jB84JLZ.png' alt ="map box pin"/> 
+								<img className="map-icon" src='https://i.imgur.com/et0YHzg.png' alt ="map box pin"/> 
 							</Marker>
 							</Link>
 						</div>

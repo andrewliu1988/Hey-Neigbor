@@ -48,7 +48,9 @@ const UserProfile = (props) => {
               <div key={i}>
                 <BusinessCard business={business} />
                 <button onClick={() => props.deleteBusiness(business.id)}>
-                  Delete
+                  <i class="fa fa-trash-o" aria-hidden="true">
+                    Delete
+                  </i>
                 </button>
                 <button
                   onClick={() =>

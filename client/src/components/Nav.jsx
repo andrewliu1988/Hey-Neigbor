@@ -35,8 +35,6 @@ const Nav =(props) => {
         <NavLink to='/events'>Events</NavLink>
         {authenticated ?<NavLink to='/user_profile/:id'> User Profile</NavLink>:
         <NavLink to='/register'>Register</NavLink> }
-        
-  
         {authenticated ?<NavLink to='/' onClick={logOut}> Logout </NavLink>:
         <NavLink to='/login'>Login</NavLink>}     
       </nav>

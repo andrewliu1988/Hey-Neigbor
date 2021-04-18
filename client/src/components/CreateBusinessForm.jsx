@@ -65,6 +65,7 @@ const CreateBusinessForm = (props) => {
         } catch (error) {
         throw error
         }
+        props.setId(user_id)
     }
 
 
