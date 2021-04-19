@@ -31,7 +31,7 @@ const EventMap = (props) => {
     height: "100wh",
     latitude: 40.7128,
     longitude: -74.0060,
-    zoom: 10
+    zoom: 4
   })
 
 

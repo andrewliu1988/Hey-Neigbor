@@ -1,11 +1,13 @@
 import {
   USER_BUSINESSES_AND_EVENTS,
   DELETE_BUSINESS,
-  DELETE_EVENT
+  DELETE_EVENT,
+  SINGLE_USER
 } from '../types'
 
 const iState = {
-  userBAndE: []
+  userBAndE: [],
+  user: {}
 }
 
 const UserReducer = (state = iState, action) => {
@@ -27,6 +29,8 @@ const UserReducer = (state = iState, action) => {
         (deleteEvent, i) => deleteEvent.id !== action.payload.data.payload
       )
       return { ...state, userBAndE: { ...state.userBAndE, events: event } }
+    case SINGLE_USER:
+      return { ...state, user: action.payload }
     default:
       return { ...state }
   }

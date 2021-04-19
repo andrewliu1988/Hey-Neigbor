@@ -62,3 +62,12 @@ export const __UpdateBusiness = async (id, formData) => {
     throw error
   }
 }
+
+export const __GetUserById = async (id) => {
+  try {
+    const res = await Client.get(`/users/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
+}

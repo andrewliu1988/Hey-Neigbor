@@ -5,9 +5,9 @@ import { connect } from 'react-redux'
 import {
   GetUserBAndE,
   DeleteBusiness,
-  DeleteEvent
+  DeleteEvent,
+  GetUserById
 } from '../store/actions/UserAction'
-import { CheckSession } from '../store/actions/AuthAction'
 import BusinessCard from '../components/BusinessCard'
 import EventCard from '../components/EventCard'
 
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchBusinessAndEvent: (id) => dispatch(GetUserBAndE(id)),
     deleteBusiness: (id) => dispatch(DeleteBusiness(id)),
     deleteEvent: (id) => dispatch(DeleteEvent(id)),
-    checkSession: (token) => dispatch(CheckSession(token))
+    singleUser: (id) => dispatch(GetUserById(id))
   }
 }
 
@@ -28,15 +28,17 @@ const UserProfile = (props) => {
   let id = props.authState.current_user
   let userBusiness = props.userState.userBAndE.businesses
   let userEvent = props.userState.userBAndE.events
+  let username = props.userState.user.username
 
   useEffect(() => {
     props.fetchBusinessAndEvent(id)
+    props.singleUser(id)
     //eslint-disable-next-line
   }, [id])
 
   return (
     <div>
-      <h2 className="user-profile-title">User Dashboard</h2>
+      <h2 className="user-profile-title"> {username} Dashboard</h2>
       <h3 className="h3-input">
         To get started, create business or event to add to dashboard.
       </h3>

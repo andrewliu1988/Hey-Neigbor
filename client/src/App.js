@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-function App(props) {
+const App = (props) => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     props.checkSession(token)

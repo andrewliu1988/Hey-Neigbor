@@ -5,7 +5,8 @@ import {
   __DeleteBusiness,
   __DeleteEvent,
   __UpdateBusiness,
-  __UpdateEvent
+  __UpdateEvent,
+  __GetUserById
 } from '../../services/UserService'
 
 import {
@@ -17,7 +18,8 @@ import {
   DELETE_EVENT,
   UPDATE_FORM_FIELD,
   UPDATE_BUSINESS,
-  CONVERTER_INPUT
+  CONVERTER_INPUT,
+  SINGLE_USER
 } from '../types'
 
 export const GetUserBAndE = (id) => async (dispatch) => {
@@ -115,3 +117,15 @@ export const ConverterInput = (formName, formValue) => ({
   type: CONVERTER_INPUT,
   payload: { name: formName, value: formValue }
 })
+
+export const GetUserById = (id) => async (dispatch) => {
+  try {
+    const userById = await __GetUserById(id)
+    dispatch({
+      type: SINGLE_USER,
+      payload: userById
+    })
+  } catch (error) {
+    throw error
+  }
+}
