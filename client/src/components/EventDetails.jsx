@@ -24,15 +24,18 @@ const EventDetails = (props) => {
 
 
   return (
-    <div className='event-details'>
-      <h1> Details </h1> 
-      <h2> {eventDetails.name}</h2>
-      <h3> Happening: {eventDetails.date}</h3> 
-      <img width="500em" src={eventDetails.image} alt="event cover"/>
-      <h3>{eventDetails.address}</h3>
-      <a href={eventDetails.website}>{eventDetails.website}</a>
-      <p>{eventDetails.description}</p>
-      <p>{eventDetails.attendees}</p>     
+    <div>
+      <div className='event-details'>
+        <img width="500em" src={eventDetails.image} alt="event cover"/>
+          <section className="details">
+            <h2 className="h2-details"> {eventDetails.name}</h2>
+            <h3 className="h3-details"> Happening On: {eventDetails.date}</h3> 
+            <h3 className="h3-details">{eventDetails.address}</h3>
+            <a  className="h3-details" href={eventDetails.website}>{eventDetails.name} Website</a>
+            <p className="description">{eventDetails.description}</p>
+            <p className="description">Attendees: {eventDetails.attendees}</p> 
+          </section> 
+        </div>  
     </div>
   )
 }

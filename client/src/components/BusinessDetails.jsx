@@ -24,14 +24,18 @@ const BusinessDetails = (props) => {
     }, [])
 
     return (
-		<div className='business-details'> 
-			<h1>Details</h1>
-			<h2> {businessDetails.name}</h2>
-			<h3>Grand Opening: {businessDetails.date}</h3> 
-			<img width="500em" src={businessDetails.image} alt="business cover"/>
-			<h3>{businessDetails.address} {businessDetails.zipcode} </h3>
-			<a href={businessDetails.website}>{businessDetails.website}</a>
-			<p>{businessDetails.description}</p>
+		<div> 
+			<div className='business-details'>
+				<img width="500em" src={businessDetails.image} alt="business cover"/>
+				<section className="details">
+					<h2 className="h2-details"> {businessDetails.name}</h2>
+					<h3 className="h3-details">Grand Opening: {businessDetails.date}</h3> 
+					<h3 className="h3-details"> Address:  {businessDetails.address} </h3>
+					<a className='h3-details' href={businessDetails.website}>{businessDetails.name} Website</a>
+					<h3 className="h3-details"> Description: </h3>
+					<p className="description">{businessDetails.description}</p>
+				</section>
+			</div>
 		</div>
     )
   }
