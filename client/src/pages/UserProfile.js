@@ -36,7 +36,7 @@ const UserProfile = (props) => {
 
   return (
     <div>
-      <h1 className="user-profile-title">User Dashboard</h1>
+      <h2 className="user-profile-title">User Dashboard</h2>
       <h3 className="h3-input">
         To get started, create business or event to add to dashboard.
       </h3>
@@ -57,6 +57,8 @@ const UserProfile = (props) => {
         </button>
       </div>
       <div className="business_event_container">
+        <h2 className="title-h2">Businesses</h2>
+        <h2 className="title-h2">Events</h2>
         <div className="user-business">
           {userBusiness ? (
             userBusiness.map((business, i) => (

@@ -14,34 +14,17 @@
   text-align: center;
 }
 
-.business-card {
-  margin-top: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
-  border: 0.4em solid white;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin-bottom: 1em;
-  width: 30em;
-  height: 20em;
-  padding: 1em 1em 1em 1em;
-  background-color: #4f6ec4;
-  color: white;
-  border-radius: 5%;
-  font-weight: bold;
-}
-
+.business-card,
 .event-card {
+  margin-top: 1em;
   margin-left: 2em;
   margin-right: 2em;
-  margin-top: 1em;
   border: 0.4em solid white;
   display: flex;
   flex-direction: column;
   text-align: left;
   margin-bottom: 1em;
-  width: 30em;
+  width: 35em;
   height: 20em;
   padding: 1em 1em 1em 1em;
   background-color: #4f6ec4;
@@ -56,8 +39,16 @@
 
 .button-container {
   display: flex;
-  justify-content: flex-end;
-  align-content: right;
+  justify-content: space-evenly;
+  /* width: 50vw; */
+  /* align-content: center; */
+}
+.title-container {
+  display: flex;
+  justify-content: space-evenly;
+  /* width: 50vw;
+  margin: left; */
+  /* text-align: center; */
 }
 
 .delete-btn,
@@ -105,6 +96,7 @@
   background-color: #4f6ec4;
   color: white;
   border-radius: 5%;
+  margin-top: 1em;
 }
 
 .fa-plus-square-o {
@@ -123,4 +115,12 @@
 
 .h3-input {
   text-align: center;
+  margin: auto;
+}
+
+.title-h2 {
+  margin: auto;
+  height: 2em;
+  color: white;
+  align-content: center;
 }

@@ -20,3 +20,20 @@
 .h1-input {
   margin-left: 5em;
 }
+
+.form-pict-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.3fr;
+  gap: 0px 0px;
+  grid-template-areas: '. .';
+  justify-content: center;
+}
+
+.login-form {
+  margin: auto;
+}
+
+.msg-section {
+  margin: auto;
+}

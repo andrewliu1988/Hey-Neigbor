@@ -39,36 +39,46 @@ const Login = (props) => {
 
   return (
     <div>
-      <h1 className="h1-input"> Sign In</h1>
-      <form className="form-input">
-        <h3>User Name:</h3>
-        <input
-        name ="username"
-        placeholder="username"
-        value={props.authState.username}
-        onChange={handleChange}
-        required
-        className="input-field"
-        />
-        <br/>
-        <br/>
-        <h3>Password:</h3>
-        <input
-        type="password"
-        name='password_digest'
-        placeholder="password"
-        value={props.authState.password_digest}
-        onChange={handleChange}
-        required
-        className='input-field'
-        />
-        <br/>
-        <br/>
-        <br/>
-        <button 
-        className="signin-btn"
-        type='button'onClick= {handleSubmit}>Login <i className="fa fa-sign-in" aria-hidden="true"></i> </button>
-      </form>
+      <div className="form-pict-container">
+        <div className="login-form">
+        <h1 className="h1-input"> Sign In</h1>
+            <form className="form-input">
+              <h3>User Name:</h3>
+              <input
+              name ="username"
+              placeholder="username"
+              value={props.authState.username}
+              onChange={handleChange}
+              required
+              className="input-field"
+              />
+              <br/>
+              <br/>
+              <h3>Password:</h3>
+              <input
+              type="password"
+              name='password_digest'
+              placeholder="password"
+              value={props.authState.password_digest}
+              onChange={handleChange}
+              required
+              className='input-field'
+              />
+              <br/>
+              <br/>
+              <br/>
+              <button 
+              className="signin-btn"
+              type='button'onClick= {handleSubmit}>Login <i className="fa fa-sign-in" aria-hidden="true"></i> </button>
+            </form>
+          </div>
+
+        <div className="msg-section"> 
+          <h1>Help the community by posting!!!</h1>
+          <h2>Sign in to start posting!!!</h2>
+          <img width="350em" src='https://i.imgur.com/jB84JLZ.png'alt="login icon"/>
+        </div>
+      </div>
     </div>
   )
 }

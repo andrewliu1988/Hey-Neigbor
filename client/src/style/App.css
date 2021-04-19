@@ -1,9 +1,13 @@
 .business_event_container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 0.051fr 2.3fr;
+  grid-template-areas:
+    '. .'
+    '. .';
+
   margin: auto;
-  gap: 5em 5em;
+  gap: 0em, 5em;
   padding-left: 10em;
   padding-right: 10em;
   margin-top: 2em;
