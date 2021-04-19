@@ -23,11 +23,19 @@
 
 .navBar {
   display: flex;
-  /* position: fixed; */
   top: 0;
   width: 100%;
   background-color: white;
-  margin-bottom: 2em;
+  margin-bottom: 0.2em;
+  border-bottom: 0.5px solid #4f6ec4;
+  align-items: center;
+}
+
+.navBar h2 {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 20px;
 }
 
 .links {
@@ -35,7 +43,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 100vw;
-  height: 4.9em;
+  height: 100%;
   font-weight: bold;
   font-size: large;
   color: black;
@@ -44,4 +52,22 @@
 a {
   margin-right: 2em;
   text-decoration: none;
+}
+
+.search-bar {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  width: 100vw;
+}
+
+.search-btn {
+  height: 2.4em;
+  margin-left: 1.5em;
+}
+
+.zipcode {
+  margin-right: 1em;
 }

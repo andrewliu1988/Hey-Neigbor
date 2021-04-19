@@ -7,11 +7,12 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0.5em, 0.5em, 0.5em, 0.5em;
-  border: 0.4em solid white;
+  border: 0.4em solid rgb(255, 255, 255);
   align-content: center;
   background-color: white;
   border: 0.4em solid #4f6ec4;
   text-align: center;
+  opacity: 0.9;
 }
 
 .business-card,
@@ -24,7 +25,7 @@
   flex-direction: column;
   text-align: left;
   margin-bottom: 1em;
-  width: 35em;
+  width: 32em;
   height: 20em;
   padding: 1em 1em 1em 1em;
   background-color: #4f6ec4;
@@ -85,8 +86,8 @@
 }
 
 .create-btn {
-  width: 12em;
-  height: 2em;
+  width: 13em;
+  height: 2.5em;
   font-size: 1em;
   display: flex;
   align-content: center;
@@ -96,7 +97,10 @@
   background-color: #4f6ec4;
   color: white;
   border-radius: 5%;
-  margin-top: 1em;
+  margin-top: 1.5em;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-top: 9px;
 }
 
 .fa-plus-square-o {
@@ -105,17 +109,22 @@
 
 .create-btn-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
 }
 
 .user-profile-title {
   margin: auto;
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .h3-input {
   text-align: center;
   margin: auto;
+  padding-top: 5px;
 }
 
 .title-h2 {

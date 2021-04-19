@@ -30,13 +30,17 @@ const EventSearchBar = (props) => {
 
   return (
     <div>
-      <form>
+      <form className="search-bar">
+      <h3 className='zipcode'>Search by Zipcode: </h3>
         <input
         type='type'
         name='eventSearch'
         value={props.eventState.eventSearch}
-        onChange={handleChange}/>
-        <button type="button" onClick={handleSubmit}>Search Zipcode</button>
+        onChange={handleChange}
+        className='input-field'/>
+        <button 
+        className="search-btn"
+        type="button" onClick={handleSubmit}>Search Zipcode <i className="fa fa-search" aria-hidden="true"></i></button>
       </form>
     </div>
   )
