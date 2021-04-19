@@ -43,8 +43,6 @@ Otherwise visit and sign up for [Hey Neighbor]()
 ---
 ### Original Concepts
 ![Starting Concept](concepts/Screen%20Shot%202021-04-12%20at%201.26.24%20PM.png)
-![ERD](concepts/Screen%20Shot%202021-04-12%20at%201.26.44%20PM.png)
-![Models](concepts/Screen%20Shot%202021-04-19%20at%2010.54.28%20AM.png)
 
 ## **_Application Images_**
 
@@ -53,9 +51,6 @@ Otherwise visit and sign up for [Hey Neighbor]()
 ![USER_PROFILE](concepts/Screen%20Shot%202021-04-19%20at%2011.01.34%20AM.png)
 
 
-
-### Original Concepts
-![Starting Concept]
 ---
 
 ### **_Future Updates_**

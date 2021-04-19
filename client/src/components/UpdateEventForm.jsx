@@ -118,7 +118,7 @@ const UpdateEventForm = (props) => {
 						className="input-field"/>
 						<br/>
 						<br/>
-					<h3>WEBSITE:</h3>    
+					<h3>WEBSITE (OPTIONAL):</h3>    
 					<input 
 						name="website"
 						placeholder={props.eventState.eventDetails.website}
@@ -142,7 +142,7 @@ const UpdateEventForm = (props) => {
 
 			<div className="msg-section"> 
 				<h1>Help the community by posting!!!</h1>
-				<h2>Sign in to start posting!!!</h2>
+				<h2>Pin the business of the map!!!</h2>
 				<img width="350em" src='https://i.imgur.com/jB84JLZ.png'alt="login icon"/>
 			</div>
 

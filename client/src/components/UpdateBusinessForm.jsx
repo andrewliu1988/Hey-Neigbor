@@ -99,7 +99,8 @@ const UpdateBusinessForm = (props ) => {
 						<input
 							type="date"
 							name="date"
-							placeholder={props.businessState.businessDetails.date}				value = {props.formState.date}
+							placeholder={props.businessState.businessDetails.date}				
+							value = {props.formState.date}
 							onChange={handleChange}
 							className="input-field"/>
 							<br/>
@@ -127,7 +128,7 @@ const UpdateBusinessForm = (props ) => {
 
 			<div className="msg-section"> 
 				<h1>Help the community by posting!!!</h1>
-				<h2>Sign in to start posting!!!</h2>
+				<h2>Pin the business of the map!!!</h2>
 				<img width="350em" src='https://i.imgur.com/et0YHzg.png'alt="login icon"/>
 			</div>
 

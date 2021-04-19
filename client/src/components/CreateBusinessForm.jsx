@@ -102,7 +102,7 @@ const CreateBusinessForm = (props) => {
             
             }
         </div>
-
+            
             <form className="form-input">
                 <input
                 type='hidden'

@@ -40,7 +40,7 @@ const BusinessSearch = (props) => {
         className="input-field"/>
         <button
         className="search-btn"
-         type="button" onClick={handleSubmit}>Search Zipcode <i className="fa fa-search" aria-hidden="true"></i></button>
+        type="button" onClick={handleSubmit}>Search Zipcode <i className="fa fa-search" aria-hidden="true"></i></button>
       </form>
     </div>
   )
